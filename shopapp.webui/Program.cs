@@ -38,6 +38,24 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "search",
+    pattern: "arama",
+    defaults: new { controller = "Shop", action = "Search"}
+);
+
+app.MapControllerRoute(
+    name: "productdetails",
+    pattern: "urun/{url}",
+    defaults: new { controller = "Shop", action = "Details"}
+);
+
+app.MapControllerRoute(
+    name: "products",
+    pattern: "kategoriler/{kategori?}",
+    defaults: new { controller = "Shop", action = "List"}
+);
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

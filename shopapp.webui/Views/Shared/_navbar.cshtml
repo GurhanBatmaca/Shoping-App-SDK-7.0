@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-primary mb-2" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-primary mb-2 rounded" >
   <div class="container">
     <a class="navbar-brand" href="/">Shop App</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,14 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Ana Sayfa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Products</a>
+          <a class="nav-link" href="/kategoriler">Ürünler</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Disabled</a>
+          <a class="nav-link" href="/kategoriler">Popüler Ürünler</a>
         </li>
+        @* <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                Kategoriler
+            </a>
+        </li> *@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
@@ -27,36 +32,58 @@
           </ul>
         </li>
       </ul>
-               <ul class="navbar-nav ms-auto">
-
-            @if(User.Identity.IsAuthenticated)
-            {
-                <li class="nav-item">
-                    <a href="/account/manage" class="nav-link">
-                       <i class="fa-solid fa-user"></i> @User.Identity.Name
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/account/logout" class="nav-link">
-                      <i class="fa-solid fa-right-from-bracket"></i> Logout
-                    </a>
-                </li>
-            }
-            else
-            {
-                <li class="nav-item">
-                    <a href="/account/login" class="nav-link">
-                    <i class="fa-solid fa-person-walking-arrow-right"></i> Login
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/account/register" class="nav-link">
-                     <i class="fa-solid fa-user-plus"></i> Register
-                    </a>
-                </li>
-            }
-                       
-        </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a href="/account/manage" class="nav-link">
+            Sepetim <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/account/manage" class="nav-link">
+            Siparişlerim <i class="fa-solid fa-truck-fast"></i>
+          </a>
+        </li>
+        @if(User.Identity!.IsAuthenticated!)
+        {
+            <li class="nav-item">
+                <a href="/account/manage" class="nav-link">
+                    <i class="fa-solid fa-user"></i> @User.Identity.Name
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/account/logout" class="nav-link">
+                  <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a href="/account/login" class="nav-link">
+                <i class="fa-solid fa-person-walking-arrow-right"></i> Login
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/account/register" class="nav-link">
+                  <i class="fa-solid fa-user-plus"></i> Register
+                </a>
+            </li>
+        }
+                    
+      </ul>
     </div>
   </div>
 </nav>
+
+@* <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Kategoriler</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    @await Component.InvokeAsync("Categories")
+  </div>
+</div> *@

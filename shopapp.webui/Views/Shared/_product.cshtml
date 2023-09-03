@@ -11,8 +11,14 @@
     <p class="card-text">@Model.Price <i class="fa-solid fa-turkish-lira-sign"></i></p>
     </div>
     <div class="card-footer d-flex justify-content-around">
-        <button class="btn btn-sm btn-primary "><i class="fa-solid fa-magnifying-glass-plus"></i> Detay</button>
-        <button class="btn btn-sm btn-primary "><i class="fa-solid fa-cart-plus"></i> Sepete Ekle</button>
+
+        <a href="/urun/@Model.Url" class="btn btn-sm btn-primary ">
+            <i class="fa-solid fa-magnifying-glass-plus"></i> Detay
+        </a>
+
+        <a  class="btn btn-sm btn-primary ">
+            <i class="fa-solid fa-cart-plus"></i> Sepete Ekle
+        </a>
     </div>
 </div>
 </div>

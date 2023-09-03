@@ -8,7 +8,9 @@ footer {
     height: 50vh;
 }
 
-.carousel-item img {
-    height: 100%;
+.carousel-item img,
+.carousel-inner,
+.carousel-item {
+    height: 100%!important;
 }
   

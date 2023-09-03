@@ -51,5 +51,31 @@ namespace shopapp.business.Concrete
         {
             return await unitOfWork.Products.GetHomePageProducts();
         }
+
+        public async Task<List<Product>?> GetProductsByCategory(string category, int page, int pageSize)
+        {
+            return await unitOfWork.Products.GetProductsByCategory(category, page, pageSize);
+        }
+
+        public async Task<int> GetProductsCountByCategory(string category)
+        {
+            return await unitOfWork.Products.GetProductsCountByCategory(category);
+        }
+
+        public async Task<Product?> GetProductDetails(string url)
+        {
+            return await unitOfWork.Products.GetProductDetails(url);
+        }
+
+        public async Task<List<Product>?> GetSearchResult(string q, int page, int pageSize)
+        {
+            return await unitOfWork.Products.GetSearchResult(q, page, pageSize);
+        }
+
+        public async Task<int> GetProductsCountBySearch(string searchString)
+        {
+            return await unitOfWork.Products.GetProductsCountBySearch(searchString);
+        }
+
     }
 }

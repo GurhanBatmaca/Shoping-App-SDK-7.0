@@ -1,0 +1,12 @@
+@model ProductDetailsModel
+
+@{
+    ViewData["Title"] = "Ürün Detayı";
+}
+
+<p>@Model.Product!.Name</p>
+
+@foreach(var item in @Model!.Categories!)
+{
+    <p>@item!.Name</p>
+}

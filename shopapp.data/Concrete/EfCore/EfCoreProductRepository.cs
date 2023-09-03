@@ -20,5 +20,73 @@ namespace shopapp.data.Concrete.EfCore
             return await ShopContext!.Products.Where(i=>i.IsHome && i.IsAproved).ToListAsync();
         }
 
+        public async Task<Product?> GetProductDetails(string url)
+        {
+            return await ShopContext!.Products
+                                    .Where(i=>i.Url == url)
+                                    .Include(e=>e.ProductCategories!)
+                                    .ThenInclude(p=>p.Category)
+                                    .FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Product>?> GetProductsByCategory(string category, int page, int pageSize)
+        {
+            var products = ShopContext!.Products
+                                    .Where(i=> i.IsAproved)
+                                    .AsQueryable();
+            
+            if(!string.IsNullOrEmpty(category))
+            {
+                products = products
+                            .Include(i => i.ProductCategories!)
+                            .ThenInclude(e=> e.Category)
+                            .Where(i=>i.ProductCategories!.Any(e=>e.Category!.Url==category));
+            };
+
+            return await products.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+        }
+
+        public async Task<int> GetProductsCountByCategory(string category)
+        {
+            var products = ShopContext!.Products
+                                    .Where(i=> i.IsAproved)
+                                    .AsQueryable();
+
+            if(!string.IsNullOrEmpty(category)) 
+            {
+                products = products
+                                .Include(i => i.ProductCategories!)
+                                .ThenInclude(e=> e.Category)
+                                .Where(i=>i.ProductCategories!.Any(e=>e.Category!.Url==category));
+            };
+
+            return await products.CountAsync();
+        }
+
+        public async Task<int> GetProductsCountBySearch(string searchString)
+        {
+            var products = ShopContext!.Products
+                                    .Where(i=> i.IsAproved)
+                                    .AsQueryable();
+
+            if(!string.IsNullOrEmpty(searchString)) 
+            {
+                products = products
+                                .Where(i=>i.IsAproved && (i.Name!.ToLower().Contains(searchString.ToLower()) || i.Description!.ToLower().Contains(searchString.ToLower())))
+                                .AsQueryable();
+
+            };
+
+            return await products.CountAsync();
+        }
+
+        public async Task<List<Product>?> GetSearchResult(string q, int page, int pageSize)
+        {
+            var products = ShopContext!.Products
+                                                .Where(i=>i.IsAproved && (i.Name!.ToLower().Contains(q.ToLower()) || i.Description!.ToLower().Contains(q.ToLower())))
+                                                .AsQueryable();
+
+            return await products.Skip((page-1)* pageSize).Take(pageSize).ToListAsync();
+        }
     }
 }

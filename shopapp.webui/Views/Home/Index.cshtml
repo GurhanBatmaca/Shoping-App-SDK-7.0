@@ -6,21 +6,29 @@
 
 @section Header 
 {
-    @* @await Html.PartialAsync("_slider") *@
+    @await Html.PartialAsync("_slider") 
+    <div class="text-center bg-light">
+        <h1>Shop App</h1>
+        <h3>Organik Köy Ürünleri</h3>
+    </div>
 }
+
 @section Css 
 {
     <link rel="stylesheet" href="~/css/card.css">
 }
 
-@await Component.InvokeAsync("Categories")
-
-
-<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4">
-    @foreach(var item in @Model.Products)
+<div class="col-md-12">
+    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4">
+    @foreach(var item in @Model.Products!)
     {
         @await Html.PartialAsync("_product", item)
     }
+    </div>
 </div>
+</div>
+
+
+
 
 

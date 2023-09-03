@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="~/shopapp.webui.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <header class="container-lg">
         @await Html.PartialAsync("_navbar")
         @RenderSection("Header", required: false)
+        <div class="row">
+        <div class="col-md-12">
+            @await Component.InvokeAsync("Categories")
+        </div>
     </header>
 
-    <div class="main container-md">
+    <div class="main container-lg">
         <main  class="pb-3">
             @RenderBody()
         </main>

@@ -1,0 +1,56 @@
+@model ProductListModel
+
+@section Css 
+{
+    <link rel="stylesheet" href="~/css/card.css">
+}
+
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+@section Header 
+{
+    <div class="text-center bg-light">
+        @* <h1>Shop App</h1>
+        <h3>Bütün Ürünler</h3> *@
+    </div>
+}
+
+<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4">
+    @foreach(var item in @Model.Products!)
+    {
+        @await Html.PartialAsync("_product", item)
+    }
+</div>
+
+<div class="row">
+    <div class="col">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+                @for (int i = 0; i < Model.PageInfo!.TotalPages(); i++)
+                {
+
+                    @if (string.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
+                    {
+                        <li class="page-item @(Model.PageInfo.CurrentPage == i+1 ? "active" : "")">
+                            <a class="page-link" href="/kategoriler?sayfa=@(i+1)">
+                                @(i+1)
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item @(Model.PageInfo.CurrentPage == i+1 ? "active" : "")">
+                            <a class="page-link" href="/kategoriler/@Model.PageInfo.CurrentCategory?sayfa=@(i+1)">
+                                @(i+1)
+                            </a>
+                        </li>
+                    }
+                }
+
+            </ul>
+        </nav>
+    </div>
+</div>

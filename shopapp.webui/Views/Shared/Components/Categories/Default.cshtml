@@ -1,7 +1,7 @@
 @model List<Category>
 
 @* <div class="list-group">
-    <a href="/products" class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == null ? "active" : "" ) ">
+    <a href="/urunler" class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == null ? "active" : "" ) ">
         Tüm Kategoriler
     </a>
 
@@ -10,34 +10,38 @@
         <a 
         asp-controller="Shop" 
         asp-action="List" 
-        asp-route-category="@item.Url" 
+        asp-route-kategori="@item.Url" 
         class="list-group-item list-group-item-action @( ViewBag.SelectedCategory == item.Url ? "active" : "" )">
             @item.Name
         </a>
     }
 </div> *@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-primary mb-2" >
-  <div class="container">
-    <a class="navbar-brand" href="/">Kategoriler</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#categoriesNavbar" aria-controls="categoriesNavbar" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light px-2 rounded mb-2" style="background-color: #e3f2fd;>
+  <div class="container-fluid">
+    <a class="navbar-brand @(ViewBag.SelectedCategory == null ? "active" : "" )" href="/kategoriler" >Kategoriler</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="categoriesNavbar">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            @foreach (var item in @Model)
-            {
-                <li class="nav-item">
-                    <a 
-                    asp-controller="Shop" 
-                    asp-action="List" 
-                    asp-route-category="@item.Url" 
-                    class="list-group-item list-group-item-action @( ViewBag.SelectedCategory == item.Url ? "active" : "" )">
-                        @item.Name
-                    </a>
-                </li>
-            }
+       @foreach (var item in @Model)
+        {
+            <li class="nav-item">        
+                <a 
+                asp-controller="Shop" 
+                asp-action="List" 
+                asp-route-kategori="@item.Url" 
+                class="nav-link @( ViewBag.SelectedCategory == item.Url ? "active" : "" )">
+                    @item.Name
+                </a>
+            </li>
+        }
       </ul>
+
+      @await Html.PartialAsync("_search")
+
     </div>
   </div>
 </nav>
+

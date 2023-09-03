@@ -15,6 +15,11 @@ namespace shopapp.webui.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
 
+            if(RouteData.Values["kategori"] != null)  // action
+            {
+                ViewBag.SelectedCategory = RouteData?.Values["kategori"];
+            }
+
             return View(await categoryService.GetAllAsync());
         }
     }
