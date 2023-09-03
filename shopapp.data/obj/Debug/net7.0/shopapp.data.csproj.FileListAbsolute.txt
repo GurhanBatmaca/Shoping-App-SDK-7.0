@@ -1,0 +1,17 @@
+c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.data.deps.json
+c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.data.runtimeconfig.json
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.data.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.data.pdb
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.entity.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\bin\Debug\net7.0\shopapp.entity.pdb
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.csproj.AssemblyReference.cache
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.AssemblyInfoInputs.cache
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.AssemblyInfo.cs
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.csproj.CoreCompileInputs.cache
+c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.csproj.CopyComplete
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\refint\shopapp.data.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.pdb
+c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\shopapp.data.genruntimeconfig.cache
+c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.data\obj\Debug\net7.0\ref\shopapp.data.dll

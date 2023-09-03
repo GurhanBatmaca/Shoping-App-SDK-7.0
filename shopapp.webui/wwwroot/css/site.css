@@ -1,0 +1,14 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+footer {
+    min-height: 10vh;
+}
+
+.carousel {
+    height: 50vh;
+}
+
+.carousel-item img {
+    height: 100%;
+}
+  
