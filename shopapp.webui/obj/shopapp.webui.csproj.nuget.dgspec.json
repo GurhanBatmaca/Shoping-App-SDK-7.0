@@ -4,14 +4,14 @@
     "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\shopapp.webui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
+    "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj",
+        "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj",
         "projectName": "shopapp.business",
-        "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj",
+        "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj",
         "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\obj\\",
+        "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -216,8 +216,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
-                "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj"
+              "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
+                "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj"
               },
               "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj": {
                 "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj"
@@ -238,6 +238,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
