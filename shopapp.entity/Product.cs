@@ -10,6 +10,7 @@ namespace shopapp.entity
         public string? ImageUrl { get; set; }
         public bool IsAproved { get; set; }
         public bool IsHome { get; set; }
+        public bool IsPopular{ get; set; }
         public DateTime DateAdded { get; set; } = DateTime.Now;
         public List<ProductCategory>? ProductCategories { get; set; }
     }

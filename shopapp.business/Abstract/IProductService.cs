@@ -16,5 +16,7 @@ namespace shopapp.business.Abstract
         Task<Product?> GetProductDetails(string url);
         Task<List<Product>?> GetSearchResult(string q, int page, int pageSize);
         Task<int> GetProductsCountBySearch(string searchString);
+        Task<List<Product>?> GetPopularProducts(int page,int pageSize);
+        Task<int> GetProductsCountByPopular();
     }
 }

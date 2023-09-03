@@ -88,5 +88,27 @@ namespace shopapp.webui.Controllers
             return View(productsListModel);
         }
 
+        public async Task<IActionResult> Popular(int sayfa=1)
+        {
+            const int pageSize = 2;
+
+            var products = await productService.GetPopularProducts(sayfa,pageSize);
+
+            var productsCount = await productService.GetProductsCountByPopular();
+
+            var productsListModel = new ProductListModel()
+            {
+                Products = products,
+                PageInfo = new PageInfo()
+                {
+                    TotalItems = productsCount,
+                    CurrentPage = sayfa,
+                    ItemPerPage = pageSize
+                }
+            };
+
+            return View(productsListModel);
+        }
+
     }
 }

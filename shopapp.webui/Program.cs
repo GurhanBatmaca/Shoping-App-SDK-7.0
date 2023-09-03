@@ -50,6 +50,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "popularproducts",
+    pattern: "populer",
+    defaults: new { controller = "Shop", action = "Popular"}
+);
+
+app.MapControllerRoute(
     name: "products",
     pattern: "kategoriler/{kategori?}",
     defaults: new { controller = "Shop", action = "List"}

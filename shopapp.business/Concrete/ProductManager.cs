@@ -77,5 +77,14 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Products.GetProductsCountBySearch(searchString);
         }
 
+        public async Task<List<Product>?> GetPopularProducts(int page, int pageSize)
+        {
+            return await unitOfWork.Products.GetPopularProducts(page, pageSize);
+        }
+
+        public async Task<int> GetProductsCountByPopular()
+        {
+            return await unitOfWork.Products.GetProductsCountByPopular();
+        }
     }
 }

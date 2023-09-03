@@ -20,6 +20,17 @@ namespace shopapp.data.Concrete.EfCore
             return await ShopContext!.Products.Where(i=>i.IsHome && i.IsAproved).ToListAsync();
         }
 
+        public async Task<List<Product>?> GetPopularProducts(int page, int pageSize)
+        {
+            var products = ShopContext!.Products
+                                        .Where(i => i.IsPopular && i.IsAproved)
+                                        .AsQueryable();
+
+            return await products.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+
+        }
+
+
         public async Task<Product?> GetProductDetails(string url)
         {
             return await ShopContext!.Products
@@ -62,6 +73,15 @@ namespace shopapp.data.Concrete.EfCore
 
             return await products.CountAsync();
         }
+
+        public async Task<int> GetProductsCountByPopular()
+        {
+            return await ShopContext!.Products
+                                        .Where(i=> i.IsAproved && i.IsPopular)
+                                        .CountAsync();
+
+        }
+
 
         public async Task<int> GetProductsCountBySearch(string searchString)
         {

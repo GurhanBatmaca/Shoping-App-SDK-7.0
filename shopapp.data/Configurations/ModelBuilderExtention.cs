@@ -9,12 +9,12 @@ namespace shopapp.data.Configurations
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasData(
-                new Product(){Id=1,Name="Yeni Kaşar",Url="yeni-kasar",Price=250,ImageUrl="1.jpg",Description="Yeni Kaşar",IsAproved=true,IsHome=true},
+                new Product(){Id=1,Name="Yeni Kaşar",Url="yeni-kasar",Price=250,ImageUrl="1.jpg",Description="Yeni Kaşar",IsAproved=true,IsHome=true,IsPopular=true},
                 new Product(){Id=2,Name="Eski Kaşar",Url="eski-kasar",Price=280,ImageUrl="2.jpg",Description="Eski Kaşar",IsAproved=true,IsHome=true},
 
-                new Product(){Id=3,Name="Kara Kovan Balı",Url="kara-kovan-bali",Price=280,ImageUrl="3.jpg",Description="Kara Kovan Balı",IsAproved=true,IsHome=true},
+                new Product(){Id=3,Name="Kara Kovan Balı",Url="kara-kovan-bali",Price=280,ImageUrl="3.jpg",Description="Kara Kovan Balı",IsAproved=true,IsHome=true,IsPopular=true},
                 new Product(){Id=4,Name="Petek Çiçek Balı",Url="petek-cicek-bali",Price=280,ImageUrl="4.jpg",Description="Petek Çiçek Balı",IsAproved=true,IsHome=true},
-                new Product(){Id=5,Name="Süzme Çiçek Balı",Url="suzme-cicek-bali",Price=280,ImageUrl="5.jpg",Description="Süzme Çiçek Balı",IsAproved=true,IsHome=true}
+                new Product(){Id=5,Name="Süzme Çiçek Balı",Url="suzme-cicek-bali",Price=280,ImageUrl="5.jpg",Description="Süzme Çiçek Balı",IsAproved=true,IsHome=true,IsPopular=true}
             );
 
             modelBuilder.Entity<Category>().HasData(
