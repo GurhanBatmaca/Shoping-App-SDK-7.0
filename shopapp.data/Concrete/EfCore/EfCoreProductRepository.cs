@@ -15,6 +15,12 @@ namespace shopapp.data.Concrete.EfCore
             get {return context as ShopContext;}  
         }
 
+        public async Task<List<Product>?> GetAllProductsByPage(int page, int pageSize)
+        {
+            return await ShopContext!.Products.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+        }
+
+
         public async Task<List<Product>?> GetHomePageProducts()
         {            
             return await ShopContext!.Products.Where(i=>i.IsHome && i.IsAproved).ToListAsync();

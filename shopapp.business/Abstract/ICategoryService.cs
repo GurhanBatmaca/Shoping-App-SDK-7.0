@@ -9,5 +9,6 @@ namespace shopapp.business.Abstract
         Task CreateAsync(Category entity);
         void Update(Category entity);
         void Delete(Category entity);
+        Task<int> CountAsync();
     }
 }

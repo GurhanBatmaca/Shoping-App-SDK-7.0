@@ -83,6 +83,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllerRoute(
+    name: "productlist",
+    pattern: "urunlistesi",
+    defaults: new { controller = "Admin", action = "ProductsList"}
+);
+
+app.MapControllerRoute(
+    name: "createproduct",
+    pattern: "urunekle",
+    defaults: new { controller = "Admin", action = "CreateProduct"}
+);
 
 app.MapControllerRoute(
     name: "search",

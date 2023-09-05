@@ -3659,11 +3659,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\shopapp.webui.csproj",
+      "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\shopapp.webui.csproj",
       "projectName": "shopapp.webui",
-      "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\shopapp.webui.csproj",
+      "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\shopapp.webui.csproj",
       "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\obj\\",
+      "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3686,8 +3686,8 @@
             "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj": {
               "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj"
             },
-            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj": {
-              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj"
+            "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj": {
+              "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj"
             }
           }
         }

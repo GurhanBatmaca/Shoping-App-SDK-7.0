@@ -46,5 +46,9 @@ namespace shopapp.business.Concrete
             throw new NotImplementedException();
         }
 
+        public async Task<int> CountAsync()
+        {
+            return await unitOfWork.Categories.CountAsync();
+        }
     }
 }

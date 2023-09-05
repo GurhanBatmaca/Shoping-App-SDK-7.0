@@ -12,6 +12,13 @@ namespace shopapp.data.Concrete.EfCore
         {
             context = _context;
         }
+
+        public async Task<int> CountAsync()
+        {
+            return await context.Set<T>().CountAsync();
+        }
+
+
         public async Task CreateAsync(T entity)
         {
             await context.Set<T>().AddAsync(entity);
@@ -27,6 +34,7 @@ namespace shopapp.data.Concrete.EfCore
         public async Task<List<T>> GetAllAsync()
         {
             return await context.Set<T>().ToListAsync();
+
         }
 
         public async Task<T?> GetByIdAsync(int id)
