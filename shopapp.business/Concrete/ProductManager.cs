@@ -102,5 +102,9 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Products.GetByIdWithCategories(id);
         }
 
+        public void Update(Product entity, int[] categoriesIds)
+        {
+            unitOfWork.Products.Update(entity, categoriesIds);
+        }
     }
 }

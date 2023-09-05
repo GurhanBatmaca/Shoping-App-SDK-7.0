@@ -16,86 +16,86 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.webui
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Accont/Register.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Accont/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb250XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/CreateProduct.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/EditProduct.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/ProductsList.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Admin/ProductsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdHNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Home/Index.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Home/Privacy.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/Components/Categories/Default.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/Components/Categories/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcmllc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/Error.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_footer.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_navbar.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_product.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_search.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_slider.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_slider.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zbGlkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Details.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/List.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Popular.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Popular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQb3B1bGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Search.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shop/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/_ViewImports.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/_ViewStart.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_Layout.cshtml]
+[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp/shopapp.webui/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dhnq7yq9x2

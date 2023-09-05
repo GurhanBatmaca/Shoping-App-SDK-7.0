@@ -33,7 +33,7 @@ namespace shopapp.webui.Models
         [Display(Name = "Popüler")]
         public bool IsPopular{ get; set; }
         
-        [Required(ErrorMessage = "Resim Alanı zorunludur.")]
+        // [Required(ErrorMessage = "Resim Alanı zorunludur.")]
         [Display(Name = "Resim")]
         [DataType(DataType.Upload)]
         public IFormFile? Photo { get; set; }

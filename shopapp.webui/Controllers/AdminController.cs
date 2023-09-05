@@ -65,23 +65,12 @@ namespace shopapp.webui.Controllers
                 ModelState.AddModelError("", "Lütfen en az bir kategori seçin.");
                 return View(model);
             }
-                
-            var extention = Path.GetExtension(model.Photo!.FileName);
-            var randomName = string.Format($"{Guid.NewGuid()}{extention}");
-            var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\img", randomName);
-
-            using (var stream = new FileStream(path,FileMode.Create))
-            {
-                await model.Photo.CopyToAsync(stream);
-            }
-
 
             var entity = new Product()
             {
                 Name = model.Name,  
                 Price = model.Price,
                 Description = model.Description,
-                ImageUrl = randomName,
                 Url = UrlModifier.Modifie(model.Name!),
                 IsAproved = model.IsAproved,
                 IsHome = model.IsHome,
@@ -93,6 +82,26 @@ namespace shopapp.webui.Controllers
                 }).ToList()                             
             };
 
+            
+            if(model!.Photo == null)
+            {
+                var randomName = "noProductImage.png";
+                entity.ImageUrl = randomName;
+            }
+            else
+            {
+                var extention = Path.GetExtension(model.Photo!.FileName);
+                var randomName = string.Format($"{Guid.NewGuid()}{extention}");
+                var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\img", randomName);
+
+                using (var stream = new FileStream(path,FileMode.Create))
+                {
+                    await model.Photo.CopyToAsync(stream);
+                }
+                entity.ImageUrl = randomName;
+                
+            }            
+                
             await productService.CreateAsync(entity);
 
             return RedirectToAction("ProductsList"); 
@@ -126,6 +135,62 @@ namespace shopapp.webui.Controllers
             ViewBag.Categories = await categoryService.GetAllAsync();
 
             return View(productModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProduct(ProductModel model,int[] categoriesIds)
+        {
+            if(!ModelState.IsValid)
+            {
+                ViewBag.Categories = await categoryService.GetAllAsync();
+                return View(model);
+            }
+            if(categoriesIds.Length <= 0)
+            {
+                ViewBag.Categories = await categoryService.GetAllAsync();
+                ModelState.AddModelError("", "Lütfen en az bir kategori seçin.");
+                return View(model);
+            }
+
+            var entity = await productService.GetByIdAsync(model.Id);
+
+            if(model.Photo != null)
+            {
+                var extention = Path.GetExtension(model.Photo!.FileName);
+                var randomName = string.Format($"{Guid.NewGuid()}{extention}");
+                var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\img", randomName);
+
+                using (var stream = new FileStream(path,FileMode.Create))
+                {
+                    await model.Photo.CopyToAsync(stream);
+                }
+
+                if(entity!.ImageUrl != "noProductImage")
+                {
+                    var exPath = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\img",entity!.ImageUrl!);
+                    System.IO.File.Delete(exPath);
+
+                    entity.ImageUrl = randomName;
+                }
+                    entity.ImageUrl = randomName;
+
+            }
+            else
+            {
+                entity!.ImageUrl = entity!.ImageUrl;
+            }
+            
+            entity!.Name = model.Name;
+            entity.Price = model.Price;
+            entity.Url = UrlModifier.Modifie(model.Name!);
+            entity.Description = model.Description;
+            entity.IsAproved = model.IsAproved;
+            entity.IsHome = model.IsHome;
+            entity.IsPopular = model.IsPopular;
+
+            productService.Update(entity,categoriesIds);
+            
+            return RedirectToAction("ProductsList"); 
         }
 
         

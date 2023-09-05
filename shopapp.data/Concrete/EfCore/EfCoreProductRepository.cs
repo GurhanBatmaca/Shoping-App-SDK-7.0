@@ -44,7 +44,6 @@ namespace shopapp.data.Concrete.EfCore
 
         }
 
-
         public async Task<Product?> GetProductDetails(string url)
         {
             return await ShopContext!.Products
@@ -96,7 +95,6 @@ namespace shopapp.data.Concrete.EfCore
 
         }
 
-
         public async Task<int> GetProductsCountBySearch(string searchString)
         {
             var products = ShopContext!.Products
@@ -122,5 +120,32 @@ namespace shopapp.data.Concrete.EfCore
 
             return await products.Skip((page-1)* pageSize).Take(pageSize).ToListAsync();
         }
+
+        public void Update(Product entity, int[] categoriesIds)
+        {
+            var product = ShopContext!.Products.Where(i=>i.Id == entity.Id).FirstOrDefault();
+
+            if(product!=null)
+            {
+                product.Name=entity.Name;
+                product.Price=entity.Price;
+                product.Description=entity.Description;
+                product.Url=entity.Url;
+                product.ImageUrl=entity.ImageUrl;
+                product.IsAproved=entity.IsAproved;
+                product.IsHome=entity.IsHome;
+                product.IsPopular = entity.IsPopular;
+
+                product.ProductCategories = categoriesIds.Select(catId => new ProductCategory()
+                {
+                    ProductId = entity.Id,
+                    CategoryId = catId
+                }).ToList();
+
+                ShopContext.SaveChanges();
+
+            }
+        }
+
     }
 }

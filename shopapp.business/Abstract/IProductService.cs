@@ -21,6 +21,7 @@ namespace shopapp.business.Abstract
         Task<int> CountAsync();
         Task<List<Product>?> GetAllProductsByPage(int page,int pageSize);
         Task<Product?> GetByIdWithCategories(int id);
+        void Update(Product entity,int[] categoriesIds);
 
     }
 }

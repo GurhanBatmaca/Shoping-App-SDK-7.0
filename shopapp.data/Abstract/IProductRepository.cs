@@ -14,6 +14,7 @@ namespace shopapp.data.Abstract
         Task<int> GetProductsCountByPopular();
         Task<List<Product>?> GetAllProductsByPage(int page,int pageSize);
         Task<Product?> GetByIdWithCategories(int id);
+        void Update(Product entity,int[] categoriesIds);
 
     }
 }

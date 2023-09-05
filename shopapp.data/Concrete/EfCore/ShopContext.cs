@@ -20,7 +20,7 @@ namespace shopapp.data.Concrete.EfCore
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new ProductCategoryConfiguration());
 
-            // builder.Seed();
+            builder.Seed();
         }   
     }
 }
