@@ -20,6 +20,14 @@ namespace shopapp.data.Concrete.EfCore
             return await ShopContext!.Products.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
         }
 
+        public async Task<Product?> GetByIdWithCategories(int id)
+        {
+            return await ShopContext!.Products
+                                    .Where(p => p.Id == id)
+                                    .Include(p => p.ProductCategories!)
+                                    .ThenInclude(p => p.Category)
+                                    .FirstOrDefaultAsync();
+        }
 
         public async Task<List<Product>?> GetHomePageProducts()
         {            

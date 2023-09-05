@@ -3680,11 +3680,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
-              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj"
+            "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj": {
+              "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.business\\shopapp.business.csproj"
             },
-            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj": {
-              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj"
+            "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj": {
+              "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.data\\shopapp.data.csproj"
             },
             "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj": {
               "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.entity\\shopapp.entity.csproj"

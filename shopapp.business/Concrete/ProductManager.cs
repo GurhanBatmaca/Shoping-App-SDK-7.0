@@ -96,5 +96,11 @@ namespace shopapp.business.Concrete
         {
             return await unitOfWork.Products.GetAllProductsByPage(page, pageSize);
         }
+
+        public async Task<Product?> GetByIdWithCategories(int id)
+        {
+            return await unitOfWork.Products.GetByIdWithCategories(id);
+        }
+
     }
 }

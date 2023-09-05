@@ -1,5 +1,14 @@
 @model ProductListModel
 
+@{
+    ViewData["Title"] = "Ürün Listesi";
+}
+
+<div>
+  <h1 class="h3">Admin Ürünler</h1>
+  <hr>
+</div>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -15,7 +24,7 @@
     </tr>
   </thead>
     <tbody>
-        @foreach(var product in @Model!.Products)
+        @foreach(var product in @Model!.Products!)
         {
             <tr>
               <th scope="row">@product.Id</th>
@@ -39,8 +48,12 @@
               {
                 <td><i class="fa-solid fa-xmark"></i></td>
               }   
-              <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></button></td>         
-              <td><button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button></td>         
+              <td>
+                <a href="/admin/urunduzenle/@product.Id" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
+              </td>         
+              <td>
+                <a class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+              </td>         
             </tr>
            
         }
@@ -56,7 +69,7 @@
                 @for (int i = 0; i < Model.PageInfo!.TotalPages(); i++)
                 {
                   <li class="page-item @(Model.PageInfo.CurrentPage == i+1 ? "active" : "")">
-                      <a class="page-link" href="/urunlistesi?sayfa=@(i+1)">
+                      <a class="page-link" href="/admin/urunlistesi?sayfa=@(i+1)">
                           @(i+1)
                       </a>
                   </li>                   

@@ -18,6 +18,28 @@ namespace shopapp.webui.Controllers
             categoryService = _categoryService;
         }
 
+        public async Task<IActionResult> ProductsList(int sayfa=1)
+        {
+            const int pageSize = 3;
+
+            var products = await productService.GetAllProductsByPage(sayfa, pageSize);
+            var productsCount = await productService.CountAsync();
+
+            var productListModel = new ProductListModel()
+            {
+                Products = products,
+                PageInfo = new PageInfo()
+                {
+                    TotalItems = productsCount,
+                    ItemPerPage = pageSize,
+                    CurrentPage = sayfa
+                }
+            };
+            
+            return View(productListModel);
+          
+        }
+
         [HttpGet]
         public async Task<IActionResult> CreateProduct()
         {
@@ -77,28 +99,35 @@ namespace shopapp.webui.Controllers
                    
         }
 
-        public async Task<IActionResult> ProductsList(int sayfa=1)
+        [HttpGet]
+        public async Task<IActionResult> EditProduct(int id)
         {
-            const int pageSize = 3;
+            var entity = await productService.GetByIdWithCategories(id);
 
-            var products = await productService.GetAllProductsByPage(sayfa, pageSize);
-            var productsCount = await productService.CountAsync();
-
-            var productListModel = new ProductListModel()
+            if(entity == null)
             {
-                Products = products,
-                PageInfo = new PageInfo()
-                {
-                    TotalItems = productsCount,
-                    ItemPerPage = pageSize,
-                    CurrentPage = sayfa
-                }
-            };
-            
-            return View(productListModel);
+                return  NotFound();   
+            }
 
-          
+            var productModel = new ProductModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Url = entity.Url,
+                Price = entity.Price,
+                ImageUrl = entity.ImageUrl,
+                Description = entity.Description,
+                IsAproved = entity.IsAproved,
+                IsHome = entity.IsHome,
+                IsPopular = entity.IsPopular,
+                SelectedCategories = entity.ProductCategories!.Select(i => i.Category!).ToList()
+            };
+
+            ViewBag.Categories = await categoryService.GetAllAsync();
+
+            return View(productModel);
         }
+
         
         
     }

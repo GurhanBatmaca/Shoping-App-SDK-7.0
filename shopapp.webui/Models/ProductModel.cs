@@ -37,6 +37,7 @@ namespace shopapp.webui.Models
         [Display(Name = "Resim")]
         [DataType(DataType.Upload)]
         public IFormFile? Photo { get; set; }
+        public List<Category> SelectedCategories { get; set; } = new List<Category>();
          
     }
 }

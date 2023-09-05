@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NwLkQW1BV/DKRyJ0z2ZzAE4uLg+XyDoAwb4CpmfUy3k=",
+  "Hash": "LK8jsPZH/WUBLAu+n2ojA4lGm//F8HWh/98U+1fyWyQ=",
   "Source": "shopapp.webui",
   "BasePath": "_content/shopapp.webui",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot\\img\\4.jpg"
     },
     {
+      "Identity": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\img\\44e62ee4-45d1-4fc2-bbb5-70eaff4d685d.jpg",
+      "SourceId": "shopapp.webui",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\",
+      "BasePath": "_content/shopapp.webui",
+      "RelativePath": "img/44e62ee4-45d1-4fc2-bbb5-70eaff4d685d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\44e62ee4-45d1-4fc2-bbb5-70eaff4d685d.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\img\\5.jpg",
       "SourceId": "shopapp.webui",
       "SourceType": "Discovered",
@@ -202,6 +219,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\70a60283-c9b9-412d-9d20-7384427209f7.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\img\\7bcba0b4-278a-4ee5-a9c4-b733aefe7553.jpg",
+      "SourceId": "shopapp.webui",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\",
+      "BasePath": "_content/shopapp.webui",
+      "RelativePath": "img/7bcba0b4-278a-4ee5-a9c4-b733aefe7553.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\7bcba0b4-278a-4ee5-a9c4-b733aefe7553.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\img\\8b0788eb-ffd4-4f24-93f6-f81fa0db4d8a.jfif",
+      "SourceId": "shopapp.webui",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\",
+      "BasePath": "_content/shopapp.webui",
+      "RelativePath": "img/8b0788eb-ffd4-4f24-93f6-f81fa0db4d8a.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\8b0788eb-ffd4-4f24-93f6-f81fa0db4d8a.jfif"
     },
     {
       "Identity": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp\\shopapp.webui\\wwwroot\\js\\site.js",

@@ -13,6 +13,7 @@ namespace shopapp.data.Abstract
         Task<List<Product>?> GetPopularProducts(int page,int pageSize);
         Task<int> GetProductsCountByPopular();
         Task<List<Product>?> GetAllProductsByPage(int page,int pageSize);
+        Task<Product?> GetByIdWithCategories(int id);
 
     }
 }
