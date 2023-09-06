@@ -123,7 +123,8 @@ namespace shopapp.data.Concrete.EfCore
 
         public void Update(Product entity, int[] categoriesIds)
         {
-            var product = ShopContext!.Products.Where(i=>i.Id == entity.Id).FirstOrDefault();
+            var product = ShopContext!.Products.Include(i =>i.ProductCategories)
+                                .FirstOrDefault(i=>i.Id == entity.Id);
 
             if(product!=null)
             {
