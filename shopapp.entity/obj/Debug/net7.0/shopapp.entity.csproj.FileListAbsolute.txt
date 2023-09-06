@@ -9,3 +9,14 @@ C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.entity\obj\Debug\net7.0\shopa
 C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.entity\obj\Debug\net7.0\refint\shopapp.entity.dll
 C:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.entity\obj\Debug\net7.0\shopapp.entity.pdb
 c:\Users\Gurha\OneDrive\Masaüstü\Shopapp\shopapp.entity\obj\Debug\net7.0\ref\shopapp.entity.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\bin\Debug\net7.0\shopapp.entity.deps.json
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\bin\Debug\net7.0\shopapp.entity.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\bin\Debug\net7.0\shopapp.entity.pdb
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.AssemblyInfo.cs
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.csproj.CoreCompileInputs.cache
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\refint\shopapp.entity.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\shopapp.entity.pdb
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.entity\obj\Debug\net7.0\ref\shopapp.entity.dll

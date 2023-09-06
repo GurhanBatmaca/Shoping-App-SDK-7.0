@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "97y+zTBp2CvYs2uxc/BytsqqnolYdCCHLTsb7wG3v0Fl2NlZLVxyZeMY2v0K2OrRh+5AVYAQmuZ+8H6LabyZLQ==",
+  "dgSpecHash": "DjmJaeSCck5oC1TBfq/FmMbt4zxoh+/RmrsgWPYyyjkTes0hpi/YmdqEwr+wq/7t6cQZ8v/gF7HPQui0q+8qZQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\shopapp.webui.csproj",
+  "projectFilePath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\shopapp.webui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gurha\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Gurha\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
