@@ -102,6 +102,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "deleteproduct",
+    pattern: "admin/urunsil/{id}",
+    defaults: new { controller = "Admin", action = "DeleteProduct"}
+);
+
+app.MapControllerRoute(
     name: "search",
     pattern: "arama",
     defaults: new { controller = "Shop", action = "Search"}

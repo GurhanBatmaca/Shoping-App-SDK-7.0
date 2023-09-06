@@ -193,7 +193,23 @@ namespace shopapp.webui.Controllers
             return RedirectToAction("ProductsList"); 
         }
 
-        
+        public async Task<IActionResult> DeleteProduct(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var entity = await productService.GetByIdAsync((int)id);
+
+            if(entity == null)
+            {
+                return NotFound();
+            }
+
+            productService.Delete(entity);
+
+            return RedirectToAction("ProductsList");
+        }
         
     }
 }
