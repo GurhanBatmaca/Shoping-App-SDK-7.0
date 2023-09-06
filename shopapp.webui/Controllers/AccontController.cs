@@ -4,6 +4,7 @@ using shopapp.webui.Identity;
 
 namespace shopapp.webui.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class AccontController: Controller
     {
         private readonly UserManager<ApplicationUser>? userManager;

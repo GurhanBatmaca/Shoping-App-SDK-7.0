@@ -84,9 +84,28 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "categorylist",
+    pattern: "admin/kategorilistesi",
+    defaults: new { controller = "Admin", action = "CategoryList"}
+);
+
+app.MapControllerRoute(
+    name: "createcategory",
+    pattern: "admin/kategoriekle",
+    defaults: new { controller = "Admin", action = "CreateCategory"}
+);
+
+app.MapControllerRoute(
+    name: "editcategory",
+    pattern: "admin/kategoridüzenle/{id}",
+    defaults: new { controller = "Admin", action = "EditCategory"}
+);
+
+
+app.MapControllerRoute(
     name: "productlist",
     pattern: "admin/urunlistesi",
-    defaults: new { controller = "Admin", action = "ProductsList"}
+    defaults: new { controller = "Admin", action = "ProductList"}
 );
 
 app.MapControllerRoute(
@@ -108,16 +127,11 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
-    name: "search",
-    pattern: "arama",
-    defaults: new { controller = "Shop", action = "Search"}
-);
-
-app.MapControllerRoute(
     name: "productdetails",
     pattern: "urun/{url}",
     defaults: new { controller = "Shop", action = "Details"}
 );
+
 
 app.MapControllerRoute(
     name: "popularproducts",
@@ -129,6 +143,12 @@ app.MapControllerRoute(
     name: "products",
     pattern: "kategoriler/{kategori?}",
     defaults: new { controller = "Shop", action = "List"}
+);
+
+app.MapControllerRoute(
+    name: "search",
+    pattern: "arama",
+    defaults: new { controller = "Shop", action = "Search"}
 );
 
 app.MapControllerRoute(

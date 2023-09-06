@@ -20,16 +20,28 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb250XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CategoryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/ProductsList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdHNMaXN0LmNzaHRtbA==
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Home/Index.cshtml]

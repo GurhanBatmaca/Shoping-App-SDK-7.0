@@ -8,6 +8,7 @@ using shopapp.webui.Models;
 
 namespace shopapp.webui.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class AdminController: Controller
     {
         private readonly IProductService productService;
@@ -18,7 +19,7 @@ namespace shopapp.webui.Controllers
             categoryService = _categoryService;
         }
 
-        public async Task<IActionResult> ProductsList(int sayfa=1)
+        public async Task<IActionResult> ProductList(int sayfa=1)
         {
             const int pageSize = 3;
 
@@ -104,14 +105,19 @@ namespace shopapp.webui.Controllers
                 
             await productService.CreateAsync(entity);
 
-            return RedirectToAction("ProductsList"); 
+            return RedirectToAction("ProductList"); 
                    
         }
 
         [HttpGet]
-        public async Task<IActionResult> EditProduct(int id)
+        public async Task<IActionResult> EditProduct(int? id)
         {
-            var entity = await productService.GetByIdWithCategories(id);
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var entity = await productService.GetByIdWithCategories((int)id!);
 
             if(entity == null)
             {
@@ -190,7 +196,7 @@ namespace shopapp.webui.Controllers
 
             productService.Update(entity,categoriesIds);
             
-            return RedirectToAction("ProductsList"); 
+            return RedirectToAction("ProductList"); 
         }
 
         public async Task<IActionResult> DeleteProduct(int? id)
@@ -208,8 +214,97 @@ namespace shopapp.webui.Controllers
 
             productService.Delete(entity);
 
-            return RedirectToAction("ProductsList");
+            return RedirectToAction("ProductList");
         }
         
+        public async Task<IActionResult> CategoryList()
+        {
+            var categories = await categoryService.GetAllAsync();
+
+            var categoryListModel = new CategoryListModel()
+            {
+                Categories = categories
+            };
+
+            return View(categoryListModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CreateCategory()
+        {
+            ViewBag.Categories = await categoryService.GetAllAsync();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory(CategoryModel model)
+        {
+            
+
+            if(!ModelState.IsValid)
+            {
+                ViewBag.Categories = await categoryService.GetAllAsync();
+                return View();
+            }
+
+            var entity = new Category()
+            {
+                Name = model.Name,
+                Url = UrlModifier.Modifie(model.Name!)
+            };
+
+            await categoryService.CreateAsync(entity);
+
+            return RedirectToAction("CategoryList");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditCategory(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var entity = await categoryService.GetByIdAsync((int)id);
+
+            if(entity == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Categories = await categoryService.GetAllAsync();
+            var categoryModel = new CategoryModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+            };
+
+            return View(categoryModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCategory(CategoryModel model)
+        {
+            if(!ModelState.IsValid)
+            {
+                ViewBag.Categories = await categoryService.GetAllAsync();
+                return View(model);
+            }
+
+            var entity = await categoryService.GetByIdAsync(model.Id);
+
+            if(model == null)
+            {
+                return NotFound();
+            }
+
+            entity!.Name = model.Name;
+            entity.Url = UrlModifier.Modifie(model.Name!);
+
+            categoryService.Update(entity);
+
+            return RedirectToAction("CategoryList");
+        }
     }
 }

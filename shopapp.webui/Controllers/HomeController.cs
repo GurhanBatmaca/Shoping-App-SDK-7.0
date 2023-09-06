@@ -5,6 +5,7 @@ using shopapp.webui.Models;
 
 namespace shopapp.webui.Controllers;
 
+[AutoValidateAntiforgeryToken]
 public class HomeController : Controller
 {
     private readonly IProductService productService;

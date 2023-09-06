@@ -1,0 +1,54 @@
+@model CategoryListModel
+
+@{
+    ViewData["Title"] = "Kategori Listesi";
+}
+
+<div class="row">
+
+    <div class="col-12">
+        <h1 class="h3">Admin Kategori</h1>
+        <hr>
+        <a class="btn btn-primary btn-sm px-3 mb-2" href="/admin/kategoriekle" >Kategori Ekle+</a>
+    </div>
+
+    <div class="table-responsive col-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td style="width: 40px;">Id</td>
+                <td >İsim</td>
+                <td style="width: 100px;">Düzenle</td>
+                <td style="width: 100px;">Sil</td>
+            </tr>
+        </thead>
+        <tbody>
+                @if (@Model!.Categories!.Count > 0)
+                {
+                    @foreach (var item in @Model.Categories)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="/admin/kategoridüzenle/@item.Id" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
+                            </td>         
+                            <td>
+                                <a href="/admin/urunsil/@item.Id" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        <h3>No Categories</h3>
+                    </div>
+                }
+
+        </tbody>
+    </table>
+    </div>
+
+</div>
+

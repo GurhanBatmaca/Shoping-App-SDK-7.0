@@ -1,0 +1,37 @@
+@model CategoryModel
+
+<h1 class="h3">Kategori Düzenle</h1>
+<hr>
+
+<div class="row">
+    <form asp-controller="Admin" asp-action="EditCategory"  method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" name="Id" value="@Model.Id">
+        <div class="row">
+            <div class="col-md-6 border-bottom mb-2">
+                <div class="form-group row mb-2">
+                    <label asp-for="Name" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input class="form-control" asp-for="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6><span class="border-bottom">Var Olan Kategoriler</span></h6>
+                <ul class="list-group"></ul>
+                @foreach (var item in (List<Category>)ViewBag.Categories)
+                {                        
+                    <li class="list-group-item">@item.Name</li>
+                }
+                </ul>
+            </div>
+        </div>
+        <div class="form-group row my-2">
+            <div class="col-sm-10 ">
+                <button type="submit" class="btn btn-primary">Kategoriyi Kaydet</button>
+            </div>
+        </div>
+    </form>
+</div>
+

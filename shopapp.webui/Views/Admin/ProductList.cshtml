@@ -1,0 +1,86 @@
+@model ProductListModel
+
+@{
+    ViewData["Title"] = "Ürün Listesi";
+}
+
+<div class="row">
+  
+  <div class="col-12">
+    <h1 class="h3">Admin Ürünler</h1>
+    <hr>
+    <a class="btn btn-primary btn-sm px-3 mb-2" href="/admin/urunekle" >Ürün Ekle+</a>
+  </div>
+
+  <div class="table-responsive col-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Resim</th>
+        <th scope="col">İsim</th>
+        <th scope="col">Fiyat</th>
+        <th scope="col">Onaylı</th>
+        <th scope="col">Anasayfa</th>
+        <th scope="col">Düzenle</th>
+        <th scope="col">Sil</th>
+      </tr>
+    </thead>
+      <tbody>
+          @foreach(var product in @Model!.Products!)
+          {
+              <tr>
+                <th scope="row">@product.Id</th>
+                <td ><img src="~/img/@product.ImageUrl" width="60" height="60"></td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+
+                @if(@product.IsAproved)
+                {
+                  <td><i class="fa-solid fa-check"></i></td>
+                }
+                else
+                {
+                  <td><i class="fa-solid fa-xmark"></i></td>
+                }
+                @if(@product.IsHome)
+                {
+                  <td><i class="fa-solid fa-check"></i></td>
+                }
+                else
+                {
+                  <td><i class="fa-solid fa-xmark"></i></td>
+                }   
+                <td>
+                  <a href="/admin/urunduzenle/@product.Id" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i></a>
+                </td>         
+                <td>
+                  <a href="/admin/urunsil/@product.Id" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                </td>         
+              </tr>
+            
+          }
+    </tbody>
+    </table>
+  </div>
+
+  <div class="row col-12">
+      <div class="col">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination">
+
+                  @for (int i = 0; i < Model.PageInfo!.TotalPages(); i++)
+                  {
+                    <li class="page-item @(Model.PageInfo.CurrentPage == i+1 ? "active" : "")">
+                        <a class="page-link" href="/admin/urunlistesi?sayfa=@(i+1)">
+                            @(i+1)
+                        </a>
+                    </li>                   
+                  }
+
+              </ul>
+          </nav>
+      </div>
+  </div>
+</div>
+
