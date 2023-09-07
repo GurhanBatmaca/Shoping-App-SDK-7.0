@@ -172,3 +172,4 @@ C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui\obj\Debu
 C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui\obj\Debug\net7.0\shopapp.webui.pdb
 c:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui\obj\Debug\net7.0\shopapp.webui.genruntimeconfig.cache
 c:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui\obj\Debug\net7.0\ref\shopapp.webui.dll
+C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui\bin\Debug\net7.0\Newtonsoft.Json.dll

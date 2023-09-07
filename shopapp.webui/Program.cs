@@ -84,6 +84,18 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "accontregister",
+    pattern: "uyelik/uyeol",
+    defaults: new { controller = "Accont", action = "Register"}
+);
+
+app.MapControllerRoute(
+    name: "accontlogin",
+    pattern: "uyelik/girisyap",
+    defaults: new { controller = "Accont", action = "Login"}
+);
+
+app.MapControllerRoute(
     name: "categorylist",
     pattern: "admin/kategorilistesi",
     defaults: new { controller = "Admin", action = "CategoryList"}

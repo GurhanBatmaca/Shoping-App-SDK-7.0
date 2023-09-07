@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Accont/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb250XExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Accont/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb250XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_messageBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9tZXNzYWdlQm94LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_navbar.cshtml]

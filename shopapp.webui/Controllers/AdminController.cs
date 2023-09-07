@@ -35,8 +35,7 @@ namespace shopapp.webui.Controllers
                     ItemPerPage = pageSize,
                     CurrentPage = sayfa
                 }
-            };
-            
+            };           
             return View(productListModel);
           
         }
@@ -44,6 +43,8 @@ namespace shopapp.webui.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateProduct()
         {
+            TempData["Message"] ="Ekleme Başarılı";
+            TempData["Css"] ="warning";
 
             ViewBag.Categories = await categoryService.GetAllAsync();
 
@@ -104,6 +105,8 @@ namespace shopapp.webui.Controllers
             }            
                 
             await productService.CreateAsync(entity);
+
+            
 
             return RedirectToAction("ProductList"); 
                    

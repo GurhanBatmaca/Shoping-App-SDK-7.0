@@ -21,6 +21,12 @@
 
     <div class="main container-lg">
         <main  class="pb-3">
+
+            @if(@TempData["Message"] != null)
+            {
+                @await Html.PartialAsync("_messageBox")
+            }
+
             @RenderBody()
         </main>
     </div>

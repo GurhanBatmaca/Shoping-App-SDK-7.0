@@ -15,11 +15,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/populer">Popüler Ürünler</a>
         </li>
-        @* <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                Kategoriler
-            </a>
-        </li> *@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
@@ -51,21 +46,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/account/logout" class="nav-link">
-                  <i class="fa-solid fa-right-from-bracket"></i> Logout
+                <a href="/uyelik/cıkısyap" class="nav-link">
+                  <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
                 </a>
             </li>
         }
         else
         {
             <li class="nav-item">
-                <a href="/account/login" class="nav-link">
-                <i class="fa-solid fa-person-walking-arrow-right"></i> Login
+                <a href="/uyelik/girisyap" class="nav-link">
+                <i class="fa-solid fa-person-walking-arrow-right"></i> Giriş Yap
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/account/register" class="nav-link">
-                  <i class="fa-solid fa-user-plus"></i> Register
+                <a href="/uyelik/uyeol" class="nav-link">
+                  <i class="fa-solid fa-user-plus"></i> Üye Ol
                 </a>
             </li>
         }
@@ -74,16 +69,3 @@
     </div>
   </div>
 </nav>
-
-@* <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Kategoriler</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    @await Component.InvokeAsync("Categories")
-  </div>
-</div> *@
