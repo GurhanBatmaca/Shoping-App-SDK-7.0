@@ -306,5 +306,24 @@ namespace shopapp.webui.Controllers
 
             return RedirectToAction("CategoryList");
         }
+
+        public async Task<IActionResult> DeleteCategory(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var entity = await categoryService.GetByIdAsync((int)id!);
+
+            if(entity == null)
+            {
+                return NotFound();
+            }
+
+            categoryService.Delete(entity);
+
+            return RedirectToAction("CategoryList");
+        }
     }
 }

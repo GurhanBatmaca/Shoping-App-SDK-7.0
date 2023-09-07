@@ -101,6 +101,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "EditCategory"}
 );
 
+app.MapControllerRoute(
+    name: "deletecategory",
+    pattern: "admin/kategorisil/{id}",
+    defaults: new { controller = "Admin", action = "DeleteCategory"}
+);
 
 app.MapControllerRoute(
     name: "productlist",
