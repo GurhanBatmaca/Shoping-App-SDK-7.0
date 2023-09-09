@@ -97,7 +97,7 @@ namespace shopapp.webui.Controllers
                     userId = user.Id
                 });
 
-                await emailSender!.SendEmailAsync(user.Email!,"Üyelik Onayı.",$"Hesabınızı onaylamak için lütfen <a href='http://localhost:5182/{url}'>linke</a> tıklayınız");
+                await emailSender!.SendEmailAsync(user.Email!,"Üyelik Onayı.",$"Hesabınızı onaylamak için lütfen <a href='http://localhost:5182{url}'>linke</a> tıklayınız");
 
                 return RedirectToAction("Login");
 
@@ -122,9 +122,40 @@ namespace shopapp.webui.Controllers
                 return View(model);
             }
 
-            var user = await userManager!.FindByIdAsync(model.Email!);
+            var user = await userManager!.FindByEmailAsync(model.Email!);
 
-            return Redirect("~/");
+            if(user == null)
+            {
+                TempData["InfoMessage"] =$"Giriş yapılamadı.";
+                TempData["InfoMessageDesc"] ="Kullanıcı kayıdı bulunamadı.";
+                TempData["InfoMessageCss"] ="danger";
+
+                return View(model);
+            }
+
+            if(!await userManager.IsEmailConfirmedAsync(user))
+            {
+                TempData["InfoMessage"] =$"Giriş yapılamadı.";
+                TempData["InfoMessageDesc"] ="Lütfen email adresinizi onaylayın.";
+                TempData["InfoMessageCss"] ="danger";
+
+                ModelState.AddModelError("","Email hesabınızı onaylayınız");
+                return View(model);
+            }
+
+            var result = await signInManager!.PasswordSignInAsync(user,model.Password!,true,false);
+
+            if(result.Succeeded)
+            {
+                TempData["InfoMessage"] =$"Hoşgeldin {user.UserName}.";
+                TempData["InfoMessageCss"] ="succsess";
+
+                return Redirect("~/");
+            }
+            
+            ModelState.AddModelError("","Girilen kullancı adı veya parola yanlış.");
+
+            return View(model);
         }
 
         public async Task<IActionResult> ConfirmEmail(string token,string userId)
