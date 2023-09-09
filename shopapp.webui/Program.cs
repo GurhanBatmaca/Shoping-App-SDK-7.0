@@ -95,21 +95,33 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "accontregister",
+    name: "accountregister",
     pattern: "uyelik/uyeol",
     defaults: new { controller = "Account", action = "Register"}
 );
 
 app.MapControllerRoute(
-    name: "accontlogin",
+    name: "accountlogin",
     pattern: "uyelik/girisyap",
     defaults: new { controller = "Account", action = "Login"}
+);
+
+app.MapControllerRoute(
+    name: "accountlogout",
+    pattern: "uyelik/cıkısyap",
+    defaults: new { controller = "Account", action = "Logout"}
 );
 
 app.MapControllerRoute(
     name: "accountconfirmemail",
     pattern: "uyelik/emailonay",
     defaults: new { controller = "Account", action = "ConfirmEmail"}
+);
+
+app.MapControllerRoute(
+    name: "accountforgotpassword",
+    pattern: "uyelik/sifremiunuttum",
+    defaults: new { controller = "Account", action = "ForgotPassword"}
 );
 
 app.MapControllerRoute(

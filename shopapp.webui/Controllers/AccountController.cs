@@ -158,6 +158,17 @@ namespace shopapp.webui.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager!.SignOutAsync();
+
+            TempData["InfoMessage"] =$"Oturum kapatıldı.";
+            TempData["InfoMessageDesc"] ="Güvenli şekilde çıkış yapıldı.";
+            TempData["InfoMessageCss"] ="warning";
+
+            return Redirect("~/");
+        }
         public async Task<IActionResult> ConfirmEmail(string token,string userId)
         {
             if(string.IsNullOrEmpty(token) || string.IsNullOrEmpty(userId))
@@ -190,6 +201,30 @@ namespace shopapp.webui.Controllers
                 return RedirectToAction("Login");
             }
             
+            return View();
+        }
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordModel model)
+        {
+
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await userManager!.FindByEmailAsync(model.Email!);
+
+            if(user == null)
+            {
+                ModelState.AddModelError("","Girilen email adresine ait kullanıcı bulunamadı.");
+
+                return View(model);
+            }
             return View();
         }
 
