@@ -22,9 +22,9 @@
     <div class="main container-lg">
         <main  class="pb-3">
 
-            @if(@TempData["Message"] != null)
+            @if(@TempData["InfoMessage"] != null)
             {
-                @await Html.PartialAsync("_messageBox")
+                @await Html.PartialAsync("_infoMessage")
             }
 
             @RenderBody()
@@ -32,6 +32,13 @@
     </div>
 
     @await Html.PartialAsync("_footer")
+
+    <script>
+        var btn_close = document.getElementById("btn_close");
+        setTimeout(function() {
+            btn_close.click();
+        },3000);
+    </script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

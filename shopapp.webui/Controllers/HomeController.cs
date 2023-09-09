@@ -17,6 +17,7 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
+
         var product = await productService.GetHomePageProducts();
         
         var productsListModel = new ProductListModel()

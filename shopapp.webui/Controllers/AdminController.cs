@@ -43,9 +43,7 @@ namespace shopapp.webui.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateProduct()
         {
-            TempData["Message"] ="Ekleme Başarılı";
-            TempData["Css"] ="warning";
-
+            
             ViewBag.Categories = await categoryService.GetAllAsync();
 
             return View();            
@@ -89,6 +87,10 @@ namespace shopapp.webui.Controllers
             {
                 var randomName = "noProductImage.png";
                 entity.ImageUrl = randomName;
+
+                TempData["InfoMessage"] =$"{entity.Name} İsimli ürün eklendi.";
+                TempData["InfoMessageDesc"] ="Resim seçilmediği için varsayılan eklendi.";
+                TempData["InfoMessageCss"] ="success";
             }
             else
             {
@@ -106,7 +108,8 @@ namespace shopapp.webui.Controllers
                 
             await productService.CreateAsync(entity);
 
-            
+            TempData["InfoMessage"] = $"{entity.Name} İsimli ürün eklendi.";
+            TempData["InfoMessageCss"] ="success";
 
             return RedirectToAction("ProductList"); 
                    
@@ -198,6 +201,9 @@ namespace shopapp.webui.Controllers
             entity.IsPopular = model.IsPopular;
 
             productService.Update(entity,categoriesIds);
+
+            TempData["InfoMessage"] =$"{model.Name} İsimli ürün güncellendi.";
+            TempData["InfoMessageCss"] ="warning";
             
             return RedirectToAction("ProductList"); 
         }
@@ -216,6 +222,9 @@ namespace shopapp.webui.Controllers
             }
 
             productService.Delete(entity);
+
+            TempData["InfoMessage"] =$"{entity.Name} İsimli ürün silindi.";
+            TempData["InfoMessageCss"] ="danger";
 
             return RedirectToAction("ProductList");
         }
@@ -257,6 +266,9 @@ namespace shopapp.webui.Controllers
             };
 
             await categoryService.CreateAsync(entity);
+
+            TempData["InfoMessage"] =$"{entity.Name} İsimli kategori eklendi.";
+            TempData["InfoMessageCss"] ="success";
 
             return RedirectToAction("CategoryList");
         }
@@ -307,6 +319,9 @@ namespace shopapp.webui.Controllers
 
             categoryService.Update(entity);
 
+            TempData["InfoMessage"] =$"{model.Name} İsimli kategori güncellendi.";
+            TempData["InfoMessageCss"] ="warning";
+
             return RedirectToAction("CategoryList");
         }
 
@@ -325,6 +340,9 @@ namespace shopapp.webui.Controllers
             }
 
             categoryService.Delete(entity);
+
+            TempData["InfoMessage"] =$"{entity.Name} İsimli kategori silindi.";
+            TempData["InfoMessageCss"] ="danger";
 
             return RedirectToAction("CategoryList");
         }

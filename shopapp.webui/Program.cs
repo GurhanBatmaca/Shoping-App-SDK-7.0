@@ -4,6 +4,7 @@ using shopapp.business.Abstract;
 using shopapp.business.Concrete;
 using shopapp.data.Abstract;
 using shopapp.data.Concrete.EfCore;
+using shopapp.webui.EmailServices;
 using shopapp.webui.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,6 +64,16 @@ builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 builder.Services.AddScoped<IProductService,ProductManager>();   
 builder.Services.AddScoped<ICategoryService,CategoryManager>();   
 
+builder.Services.AddScoped<IEmailSender,SmtpEmailSender>( i => 
+    new SmtpEmailSender(
+        builder.Configuration["EmailSender:Host"]!,
+        builder.Configuration.GetValue<int>("EmailSender:Port"),
+        builder.Configuration.GetValue<bool>("EmailSender:EnableSSL"),
+        builder.Configuration["EmailSender:UserName"]!,
+        builder.Configuration["EmailSender:Password"]!
+    )
+);
+
 
 var app = builder.Build();
 
@@ -86,13 +97,19 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "accontregister",
     pattern: "uyelik/uyeol",
-    defaults: new { controller = "Accont", action = "Register"}
+    defaults: new { controller = "Account", action = "Register"}
 );
 
 app.MapControllerRoute(
     name: "accontlogin",
     pattern: "uyelik/girisyap",
-    defaults: new { controller = "Accont", action = "Login"}
+    defaults: new { controller = "Account", action = "Login"}
+);
+
+app.MapControllerRoute(
+    name: "accountconfirmemail",
+    pattern: "uyelik/emailonay",
+    defaults: new { controller = "Account", action = "ConfirmEmail"}
 );
 
 app.MapControllerRoute(
