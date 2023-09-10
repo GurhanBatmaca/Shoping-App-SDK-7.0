@@ -195,8 +195,8 @@ namespace shopapp.webui.Controllers
             if(result.Succeeded)
             {
                 TempData["InfoMessage"] =$"Hesabınız onaylandı.";
-                TempData["InfoMessageDesc"] =$"Griş yapabilirsiniz.";
-                TempData["InfoMessageCss"] ="succsess";
+                TempData["InfoMessageDesc"] =$"Giriş yapabilirsiniz.";
+                TempData["InfoMessageCss"] ="success";
 
                 return RedirectToAction("Login");
             }
@@ -225,7 +225,76 @@ namespace shopapp.webui.Controllers
 
                 return View(model);
             }
-            return View();
+
+            var token = await userManager.GeneratePasswordResetTokenAsync(user);
+
+            var url = Url.Action("ResetPassword", "Account", new {
+                token = token,
+                userId = user.Id
+            });
+
+            await emailSender!.SendEmailAsync(model.Email!,"Parola sıfırlama.",$"Şifrenizi yenilemek için lütfen <a href='http://localhost:5182{url}'>linke</a> tıklayın.");
+
+            TempData["InfoMessage"] =$"Parolanızı sıfırlamak için mail adresinizi kontrol edin..";
+            TempData["InfoMessageCss"] ="warning";
+
+            return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string token,string userId)
+        {
+            if(string.IsNullOrEmpty(token) || string.IsNullOrEmpty(userId))
+            {
+                TempData["InfoMessage"] =$"Geçersiz Token.";
+                TempData["InfoMessageCss"] ="danger";
+
+                ModelState.AddModelError("","Geçersiz Token.");
+
+                return RedirectToAction("ForgotPassword");
+            }
+
+            var resetPasswordModel = new ResetPasswordModel()
+            {
+                Token = token,
+            };
+
+            return View(resetPasswordModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if(!ModelState.IsValid)
+            {               
+                return View(model);
+            }
+
+            var user = await userManager!.FindByEmailAsync(model.Email!);
+
+            if(user == null)
+            {
+                TempData["InfoMessage"] =$"Mail adresi hatası.";
+                TempData["InfoMessageCss"] ="danger";
+
+                ModelState.AddModelError("","Mail adresi bulunamadı.");
+
+                return View(model);
+            }
+
+            var result = await userManager.ResetPasswordAsync(user,model.Token!,model.Password!);
+
+            if(result.Succeeded)
+            {
+                TempData["InfoMessage"] =$"Yeni şifre kaydedildi.";
+                TempData["InfoMessageCss"] ="success";
+
+                return RedirectToAction("Login");
+            }
+
+            ModelState.AddModelError("","Şifre en az 6 karater uzunluğunda olmalı,büyük ve küçük harf,rakam ve alfanumerik karakter içermelidir.");
+
+            return View(model);
         }
 
     }

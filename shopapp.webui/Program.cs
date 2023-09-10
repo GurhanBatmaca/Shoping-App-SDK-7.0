@@ -125,6 +125,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "accountresetpassword",
+    pattern: "uyelik/sifresifirlama",
+    defaults: new { controller = "Account", action = "ResetPassword"}
+);
+
+app.MapControllerRoute(
     name: "categorylist",
     pattern: "admin/kategorilistesi",
     defaults: new { controller = "Admin", action = "CategoryList"}

@@ -4,14 +4,14 @@
     "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\shopapp.webui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj": {
+    "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+        "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
         "projectName": "shopapp.business",
-        "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+        "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
         "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\obj\\",
+        "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -216,8 +216,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj": {
-                "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj"
+              "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj": {
+                "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj"
               },
               "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.data\\shopapp.data.csproj": {
                 "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.data\\shopapp.data.csproj"
