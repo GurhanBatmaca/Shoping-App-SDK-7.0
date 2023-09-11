@@ -63,6 +63,11 @@ namespace shopapp.webui.Controllers
         [HttpGet]
         public  IActionResult Register()
         {
+            if(User.Identity!.IsAuthenticated!)
+            {
+                return RedirectToAction("Index","Home");
+            }
+
             return View();
         }
 
@@ -111,6 +116,11 @@ namespace shopapp.webui.Controllers
         [HttpGet]
         public  IActionResult Login()
         {
+            if(User.Identity!.IsAuthenticated!)
+            {
+                return RedirectToAction("Index","Home");
+            }
+
             return View();
         }
 
@@ -161,6 +171,11 @@ namespace shopapp.webui.Controllers
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
+            if(!User.Identity!.IsAuthenticated!)
+            {
+                return RedirectToAction("Index","Home");
+            }
+            
             await signInManager!.SignOutAsync();
 
             TempData["InfoMessage"] =$"Oturum kapatıldı.";
@@ -297,5 +312,10 @@ namespace shopapp.webui.Controllers
             return View(model);
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+    
     }
 }

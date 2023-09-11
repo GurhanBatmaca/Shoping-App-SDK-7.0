@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

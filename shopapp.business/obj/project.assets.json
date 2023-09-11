@@ -3219,11 +3219,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+      "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
       "projectName": "shopapp.business",
-      "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+      "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
       "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\obj\\",
+      "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",
