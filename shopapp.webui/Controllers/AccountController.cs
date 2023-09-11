@@ -158,7 +158,7 @@ namespace shopapp.webui.Controllers
             if(result.Succeeded)
             {
                 TempData["InfoMessage"] =$"Hoşgeldin {user.UserName}.";
-                TempData["InfoMessageCss"] ="succsess";
+                TempData["InfoMessageCss"] ="success";
 
                 return Redirect("~/");
             }
