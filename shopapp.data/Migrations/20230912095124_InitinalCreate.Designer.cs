@@ -12,8 +12,8 @@ using shopapp.data.Concrete.EfCore;
 namespace shopapp.data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20230903132940_AddedColonIsPopular")]
-    partial class AddedColonIsPopular
+    [Migration("20230912095124_InitinalCreate")]
+    partial class InitinalCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,48 @@ namespace shopapp.data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("shopapp.entity.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("shopapp.entity.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems");
+                });
 
             modelBuilder.Entity("shopapp.entity.Category", b =>
                 {
@@ -88,6 +130,90 @@ namespace shopapp.data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("shopapp.entity.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ConversationId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaymentId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("shopapp.entity.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("shopapp.entity.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -133,7 +259,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 1,
-                            DateAdded = new DateTime(2023, 9, 3, 16, 29, 39, 997, DateTimeKind.Local).AddTicks(1818),
+                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1700),
                             Description = "Yeni Kaşar",
                             ImageUrl = "1.jpg",
                             IsAproved = true,
@@ -146,7 +272,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 2,
-                            DateAdded = new DateTime(2023, 9, 3, 16, 29, 39, 997, DateTimeKind.Local).AddTicks(1833),
+                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1722),
                             Description = "Eski Kaşar",
                             ImageUrl = "2.jpg",
                             IsAproved = true,
@@ -159,7 +285,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 3,
-                            DateAdded = new DateTime(2023, 9, 3, 16, 29, 39, 997, DateTimeKind.Local).AddTicks(1835),
+                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1725),
                             Description = "Kara Kovan Balı",
                             ImageUrl = "3.jpg",
                             IsAproved = true,
@@ -172,7 +298,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 4,
-                            DateAdded = new DateTime(2023, 9, 3, 16, 29, 39, 997, DateTimeKind.Local).AddTicks(1837),
+                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1726),
                             Description = "Petek Çiçek Balı",
                             ImageUrl = "4.jpg",
                             IsAproved = true,
@@ -185,7 +311,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 5,
-                            DateAdded = new DateTime(2023, 9, 3, 16, 29, 39, 997, DateTimeKind.Local).AddTicks(1838),
+                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1728),
                             Description = "Süzme Çiçek Balı",
                             ImageUrl = "5.jpg",
                             IsAproved = true,
@@ -249,6 +375,44 @@ namespace shopapp.data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("shopapp.entity.CartItem", b =>
+                {
+                    b.HasOne("shopapp.entity.Cart", "Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("shopapp.entity.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("shopapp.entity.OrderItem", b =>
+                {
+                    b.HasOne("shopapp.entity.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("shopapp.entity.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("shopapp.entity.ProductCategory", b =>
                 {
                     b.HasOne("shopapp.entity.Category", "Category")
@@ -268,9 +432,19 @@ namespace shopapp.data.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("shopapp.entity.Cart", b =>
+                {
+                    b.Navigation("CartItems");
+                });
+
             modelBuilder.Entity("shopapp.entity.Category", b =>
                 {
                     b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("shopapp.entity.Order", b =>
+                {
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("shopapp.entity.Product", b =>

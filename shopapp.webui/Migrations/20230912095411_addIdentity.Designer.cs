@@ -12,8 +12,8 @@ using shopapp.webui.Identity;
 namespace shopapp.webui.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230907115845_NewMigration")]
-    partial class NewMigration
+    [Migration("20230912095411_addIdentity")]
+    partial class addIdentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

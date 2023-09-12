@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using shopapp.data.Concrete.EfCore;
 
@@ -11,9 +12,11 @@ using shopapp.data.Concrete.EfCore;
 namespace shopapp.data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20230912094855_addColumnCartAndOrder")]
+    partial class addColumnCartAndOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,50 +84,6 @@ namespace shopapp.data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Kaşar",
-                            Url = "kasar"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Eski Kaşar",
-                            Url = "eski-kasar"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Yeni Kaşar",
-                            Url = "yeni-kasar"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Süzme Bal",
-                            Url = "suzme-bal"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Petek Bal",
-                            Url = "petek-bal"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Kara Kovan Bal",
-                            Url = "kara-kovan-bal"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Çiçek Bal",
-                            Url = "cicek-bal"
-                        });
                 });
 
             modelBuilder.Entity("shopapp.entity.Order", b =>
@@ -251,73 +210,6 @@ namespace shopapp.data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1700),
-                            Description = "Yeni Kaşar",
-                            ImageUrl = "1.jpg",
-                            IsAproved = true,
-                            IsHome = true,
-                            IsPopular = true,
-                            Name = "Yeni Kaşar",
-                            Price = 250.0,
-                            Url = "yeni-kasar"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1722),
-                            Description = "Eski Kaşar",
-                            ImageUrl = "2.jpg",
-                            IsAproved = true,
-                            IsHome = true,
-                            IsPopular = false,
-                            Name = "Eski Kaşar",
-                            Price = 280.0,
-                            Url = "eski-kasar"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1725),
-                            Description = "Kara Kovan Balı",
-                            ImageUrl = "3.jpg",
-                            IsAproved = true,
-                            IsHome = true,
-                            IsPopular = true,
-                            Name = "Kara Kovan Balı",
-                            Price = 280.0,
-                            Url = "kara-kovan-bali"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1726),
-                            Description = "Petek Çiçek Balı",
-                            ImageUrl = "4.jpg",
-                            IsAproved = true,
-                            IsHome = true,
-                            IsPopular = false,
-                            Name = "Petek Çiçek Balı",
-                            Price = 280.0,
-                            Url = "petek-cicek-bali"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1728),
-                            Description = "Süzme Çiçek Balı",
-                            ImageUrl = "5.jpg",
-                            IsAproved = true,
-                            IsHome = true,
-                            IsPopular = true,
-                            Name = "Süzme Çiçek Balı",
-                            Price = 280.0,
-                            Url = "suzme-cicek-bali"
-                        });
                 });
 
             modelBuilder.Entity("shopapp.entity.ProductCategory", b =>
@@ -333,43 +225,6 @@ namespace shopapp.data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("ProductCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            ProductId = 1,
-                            CategoryId = 3
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            ProductId = 3,
-                            CategoryId = 5
-                        },
-                        new
-                        {
-                            ProductId = 4,
-                            CategoryId = 4
-                        },
-                        new
-                        {
-                            ProductId = 5,
-                            CategoryId = 4
-                        });
                 });
 
             modelBuilder.Entity("shopapp.entity.CartItem", b =>
