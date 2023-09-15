@@ -68,6 +68,8 @@ namespace shopapp.webui.Controllers
                 return RedirectToAction("Index","Home");
             }
 
+            SeedIdentity.Seed(userManager!,roleManager!).Wait();
+
             return View();
         }
 
