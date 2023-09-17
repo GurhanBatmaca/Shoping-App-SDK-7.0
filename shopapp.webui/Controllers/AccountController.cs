@@ -81,6 +81,18 @@ namespace shopapp.webui.Controllers
                 return View(model);
             }
 
+            var checkName = await userManager!.FindByNameAsync(model.UserName!);
+            var checkMail = await userManager.FindByEmailAsync(model.Email!);
+
+            if(checkName != null)
+            {
+                return View(model);
+            }
+            if(checkMail != null)
+            {
+                return View(model);
+            }
+
             var user = new ApplicationUser()
             {
                 UserName = model.UserName,
