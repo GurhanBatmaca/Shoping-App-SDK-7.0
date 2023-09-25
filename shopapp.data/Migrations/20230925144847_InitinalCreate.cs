@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace shopapp.data.Migrations
 {
     /// <inheritdoc />
-    public partial class addColumnCartAndOrder : Migration
+    public partial class InitinalCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -162,6 +164,46 @@ namespace shopapp.data.Migrations
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name", "Url" },
+                values: new object[,]
+                {
+                    { 1, "Kaşar", "kasar" },
+                    { 2, "Eski Kaşar", "eski-kasar" },
+                    { 3, "Yeni Kaşar", "yeni-kasar" },
+                    { 4, "Süzme Bal", "suzme-bal" },
+                    { 5, "Petek Bal", "petek-bal" },
+                    { 6, "Kara Kovan Bal", "kara-kovan-bal" },
+                    { 7, "Çiçek Bal", "cicek-bal" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "DateAdded", "Description", "ImageUrl", "IsAproved", "IsHome", "IsPopular", "Name", "Price", "Url" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(408), "Yeni Kaşar", "1.jpg", true, true, true, "Yeni Kaşar", 250.0, "yeni-kasar" },
+                    { 2, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(423), "Eski Kaşar", "2.jpg", true, true, false, "Eski Kaşar", 280.0, "eski-kasar" },
+                    { 3, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(424), "Kara Kovan Balı", "3.jpg", true, true, true, "Kara Kovan Balı", 280.0, "kara-kovan-bali" },
+                    { 4, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(426), "Petek Çiçek Balı", "4.jpg", true, true, false, "Petek Çiçek Balı", 280.0, "petek-cicek-bali" },
+                    { 5, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(427), "Süzme Çiçek Balı", "5.jpg", true, true, true, "Süzme Çiçek Balı", 280.0, "suzme-cicek-bali" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductCategory",
+                columns: new[] { "CategoryId", "ProductId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 3, 1 },
+                    { 1, 2 },
+                    { 2, 2 },
+                    { 5, 3 },
+                    { 4, 4 },
+                    { 4, 5 }
                 });
 
             migrationBuilder.CreateIndex(

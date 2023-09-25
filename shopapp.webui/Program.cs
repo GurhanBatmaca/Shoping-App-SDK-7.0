@@ -74,26 +74,27 @@ builder.Services.AddScoped<IEmailSender,SmtpEmailSender>( i =>
     )
 );
 
-
 var app = builder.Build();
 
-// using (var scope = app.Services.CreateScope())
-// {
-//     var dbContext = scope.ServiceProvider;
-//     try
-//     {
-        
-//         UserRoleInitializer.InitializeAsync(dbContext).Wait();
-//     }
-//     catch(Exception ex)
-//     {
-//         var logger = dbContext.GetRequiredService<ILogger<Program>>();
-//         logger.LogError(ex, "An error occured while attempting to seed the database");
-//     }
-    
-// }
+
+using(var scope = app.Services.CreateScope())
+{
+    //Resolve ASP .NET Core Identity with DI help
+    var userManager = (UserManager<ApplicationUser>?)scope.ServiceProvider.GetService(typeof(UserManager<ApplicationUser>));
+    var roleManager = (RoleManager<IdentityRole>?)scope.ServiceProvider.GetService(typeof(RoleManager<IdentityRole>));
+    // do you things here
+
+    var configurationManager = builder.Configuration;
+
+SeedIdentity.Seed(userManager!,roleManager!,configurationManager).Wait();
+
+}
+
+// var userManager = app.Services.GetService<UserManager<ApplicationUser>>();
+// var roleManager = app.Services.GetService<RoleManager<IdentityRole>>();
 
 // Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

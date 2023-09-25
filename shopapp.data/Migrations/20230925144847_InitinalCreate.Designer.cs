@@ -12,7 +12,7 @@ using shopapp.data.Concrete.EfCore;
 namespace shopapp.data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20230912095124_InitinalCreate")]
+    [Migration("20230925144847_InitinalCreate")]
     partial class InitinalCreate
     {
         /// <inheritdoc />
@@ -259,7 +259,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 1,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1700),
+                            DateAdded = new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(408),
                             Description = "Yeni Kaşar",
                             ImageUrl = "1.jpg",
                             IsAproved = true,
@@ -272,7 +272,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 2,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1722),
+                            DateAdded = new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(423),
                             Description = "Eski Kaşar",
                             ImageUrl = "2.jpg",
                             IsAproved = true,
@@ -285,7 +285,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 3,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1725),
+                            DateAdded = new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(424),
                             Description = "Kara Kovan Balı",
                             ImageUrl = "3.jpg",
                             IsAproved = true,
@@ -298,7 +298,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 4,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1726),
+                            DateAdded = new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(426),
                             Description = "Petek Çiçek Balı",
                             ImageUrl = "4.jpg",
                             IsAproved = true,
@@ -311,7 +311,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 5,
-                            DateAdded = new DateTime(2023, 9, 12, 12, 51, 24, 112, DateTimeKind.Local).AddTicks(1728),
+                            DateAdded = new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(427),
                             Description = "Süzme Çiçek Balı",
                             ImageUrl = "5.jpg",
                             IsAproved = true,

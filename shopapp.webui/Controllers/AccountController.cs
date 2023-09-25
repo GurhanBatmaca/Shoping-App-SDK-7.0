@@ -22,44 +22,6 @@ namespace shopapp.webui.Controllers
             roleManager = _roleManager;
             emailSender = _emailSender;
         }
-
-        // public async Task<IActionResult> Register()
-        // {
-
-            
-        //     var user1 = new ApplicationUser()
-        //     {
-        //         FirstName = "Admin",
-        //         LastName = "Admin",
-        //         UserName = "Admin",
-        //         Email = "admin@shopapp.com",
-        //         EmailConfirmed = true
-        //     };
-
-        //     var result = await userManager!.CreateAsync(user1,"Shopapp_123");
-
-        //     var result2 = await roleManager!.CreateAsync(new IdentityRole(){Name="Admin"});
-
-        //     await userManager.AddToRoleAsync(user1,"Admin");
-
-        //     var user = new ApplicationUser()
-        //     {
-        //         FirstName = "Customer",
-        //         LastName = "Customer",
-        //         UserName = "Customer",
-        //         Email = "customer@shopapp.com",
-        //         EmailConfirmed = true
-        //     };
-
-        //     var result3 = await userManager!.CreateAsync(user,"Shopapp_123");
-
-        //     var result4 = await roleManager!.CreateAsync(new IdentityRole(){Name="Customer"});
-
-        //     await userManager.AddToRoleAsync(user,"Customer");
-
-        //     return View();
-            
-        // }
         
         [HttpGet]
         public  IActionResult Register()
@@ -68,9 +30,7 @@ namespace shopapp.webui.Controllers
             {
                 return RedirectToAction("Index","Home");
             }
-
-            SeedIdentity.Seed(userManager!,roleManager!).Wait();
-
+            
             return View();
         }
 
