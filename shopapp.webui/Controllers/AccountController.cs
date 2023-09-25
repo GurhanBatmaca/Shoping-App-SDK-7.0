@@ -30,7 +30,7 @@ namespace shopapp.webui.Controllers
             {
                 return RedirectToAction("Index","Home");
             }
-            
+
             return View();
         }
 
@@ -42,15 +42,29 @@ namespace shopapp.webui.Controllers
                 return View(model);
             }
 
-            var checkName = await userManager!.FindByNameAsync(model.UserName!);
-            var checkMail = await userManager.FindByEmailAsync(model.Email!);
+            var nameExist = await userManager!.FindByNameAsync(model.UserName!);
+            var emailExist = await userManager.FindByEmailAsync(model.Email!);
 
-            if(checkName != null)
+            if(nameExist != null)
             {
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Bu isimle daha önce kullanıcı oluşturulmuş.",
+                    Message = "Lütfen farklı bir kullanıcı adı seçin.",
+                    AlertType = "danger"
+                }); 
+
                 return View(model);
             }
-            if(checkMail != null)
+            if(emailExist != null)
             {
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Bu mail adresi ile daha önce kullanıcı oluşturulmuş.",
+                    Message = "Şifrenizi unuttuysanız şifremi unuttum kısmından yeniden alabilirsiniz.",
+                    AlertType = "danger"
+                }); 
+
                 return View(model);
             }
 
@@ -66,9 +80,12 @@ namespace shopapp.webui.Controllers
 
             if(result.Succeeded)
             {
-                TempData["InfoMessage"] =$"Üyelik oluşturuldu.";
-                TempData["InfoMessageDesc"] =$"Üyeliğinizi onaylamak için mail adresinizi kontrol edin.";
-                TempData["InfoMessageCss"] ="warning";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Üyelik oluşturuldu.",
+                    Message = "Üyeliğinizi onaylamak için mail adresinizi kontrol edin.",
+                    AlertType = "warning"
+                }); 
 
                 var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
 

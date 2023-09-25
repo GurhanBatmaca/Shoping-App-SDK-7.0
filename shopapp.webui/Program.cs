@@ -84,7 +84,6 @@ using(var scope = app.Services.CreateScope())
     // do you things here
 
     var configurationManager = builder.Configuration;
-
     SeedIdentity.Seed(userManager!,roleManager!,configurationManager).Wait();
 
 }
