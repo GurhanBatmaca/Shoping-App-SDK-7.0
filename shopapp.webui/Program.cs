@@ -21,10 +21,10 @@ builder.Services.AddDbContext<ApplicationContext>(options => {
     options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser,IdentityRole>().                    AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options => {
-        // password
+    // password
     options.Password.RequireDigit = true; // şifrede numara olmak zorunda
     options.Password.RequireLowercase = true; // küçük harf 
     options.Password.RequireUppercase = true; // büyük harf 
@@ -76,7 +76,6 @@ builder.Services.AddScoped<IEmailSender,SmtpEmailSender>( i =>
 
 var app = builder.Build();
 
-
 using(var scope = app.Services.CreateScope())
 {
     //Resolve ASP .NET Core Identity with DI help
@@ -86,12 +85,9 @@ using(var scope = app.Services.CreateScope())
 
     var configurationManager = builder.Configuration;
 
-SeedIdentity.Seed(userManager!,roleManager!,configurationManager).Wait();
+    SeedIdentity.Seed(userManager!,roleManager!,configurationManager).Wait();
 
 }
-
-// var userManager = app.Services.GetService<UserManager<ApplicationUser>>();
-// var roleManager = app.Services.GetService<RoleManager<IdentityRole>>();
 
 // Configure the HTTP request pipeline.
 

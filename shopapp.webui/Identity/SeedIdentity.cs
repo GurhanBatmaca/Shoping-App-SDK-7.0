@@ -15,11 +15,26 @@ namespace shopapp.webui.Identity
                 EmailConfirmed = true
             };
 
-            var result = await userManager!.CreateAsync(admin,configuration["Identity:Admin:Password"]!);
+            var adminUserExist = await userManager.FindByNameAsync(configuration["Identity:Admin:UserName"]!);
 
-            var result2 = await roleManager!.CreateAsync(new IdentityRole(){Name="Admin"});
+            if(adminUserExist == null)
+            {
+                await userManager!.CreateAsync(admin,configuration["Identity:Admin:Password"]!);
+            }
 
-            await userManager.AddToRoleAsync(admin,"Admin");
+            var adminRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Admin:Role"]!);
+
+            if(adminRoleExist == null)
+            {
+                await roleManager!.CreateAsync(new IdentityRole(){Name = configuration["Identity:Admin:Role"]!});
+            }
+
+            var adminInRole = await userManager.IsInRoleAsync(admin,configuration["Identity:Admin:Role"]!);
+
+            if(!adminInRole)
+            {
+                await userManager.AddToRoleAsync(admin,configuration["Identity:Admin:Role"]!);
+            }
 
             var user = new ApplicationUser()
             {
@@ -30,11 +45,26 @@ namespace shopapp.webui.Identity
                 EmailConfirmed = true
             };
 
-            var result3 = await userManager!.CreateAsync(user,configuration["Identity:Customer:Password"]!);
+            var CustomerUserExist = await userManager.FindByNameAsync(configuration["Identity:Customer:UserName"]!);
 
-            var result4 = await roleManager!.CreateAsync(new IdentityRole(){Name="Customer"});
+            if(CustomerUserExist == null)
+            {
+                await userManager!.CreateAsync(user,configuration["Identity:Customer:Password"]!);
+            }
 
-            await userManager.AddToRoleAsync(user,"Customer");
+            var customerRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Customer:Role"]!);
+
+            if(customerRoleExist == null)
+            {
+                await roleManager!.CreateAsync(new IdentityRole(){Name = configuration["Identity:Customer:Role"]!});
+            }
+
+            var customerInRole = await userManager.IsInRoleAsync(user,configuration["Identity:Customer:Role"]!);
+
+            if(!customerInRole)
+            {
+                await userManager.AddToRoleAsync(user,configuration["Identity:Customer:Role"]!);
+            }
         }
     }
 }
