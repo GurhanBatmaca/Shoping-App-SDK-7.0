@@ -77,6 +77,22 @@ builder.Services.AddScoped<IEmailSender,SmtpEmailSender>( i =>
 
 var app = builder.Build();
 
+// using (var scope = app.Services.CreateScope())
+// {
+//     var dbContext = scope.ServiceProvider;
+//     try
+//     {
+        
+//         UserRoleInitializer.InitializeAsync(dbContext).Wait();
+//     }
+//     catch(Exception ex)
+//     {
+//         var logger = dbContext.GetRequiredService<ILogger<Program>>();
+//         logger.LogError(ex, "An error occured while attempting to seed the database");
+//     }
+    
+// }
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

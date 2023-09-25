@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using shopapp.business.Abstract;
 using shopapp.entity;
+using shopapp.webui.Extentions;
 using shopapp.webui.Helpers;
 using shopapp.webui.Identity;
 using shopapp.webui.Models;
@@ -90,9 +91,13 @@ namespace shopapp.webui.Controllers
                 var randomName = "noProductImage.png";
                 entity.ImageUrl = randomName;
 
-                TempData["InfoMessage"] =$"{entity.Name} İsimli ürün eklendi.";
-                TempData["InfoMessageDesc"] ="Resim seçilmediği için varsayılan eklendi.";
-                TempData["InfoMessageCss"] ="success";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = $"{entity.Name} İsimli ürün eklendi.",
+                    Message = "Resim seçilmediği için varsayılan eklendi.",
+                    AlertType = "success"
+                });
+
             }
             else
             {
@@ -110,8 +115,11 @@ namespace shopapp.webui.Controllers
                 
             await productService.CreateAsync(entity);
 
-            TempData["InfoMessage"] = $"{entity.Name} İsimli ürün eklendi.";
-            TempData["InfoMessageCss"] ="success";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli ürün eklendi.",
+                AlertType = "success"
+            });
 
             return RedirectToAction("ProductList"); 
                    
@@ -204,8 +212,11 @@ namespace shopapp.webui.Controllers
 
             productService.Update(entity,categoriesIds);
 
-            TempData["InfoMessage"] =$"{model.Name} İsimli ürün güncellendi.";
-            TempData["InfoMessageCss"] ="warning";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli ürün güncellendi.",
+                AlertType = "warning"
+            });
             
             return RedirectToAction("ProductList"); 
         }
@@ -225,8 +236,11 @@ namespace shopapp.webui.Controllers
 
             productService.Delete(entity);
 
-            TempData["InfoMessage"] =$"{entity.Name} İsimli ürün silindi.";
-            TempData["InfoMessageCss"] ="danger";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli ürün silindi.",
+                AlertType = "danger"
+            });
 
             return RedirectToAction("ProductList");
         }
@@ -269,8 +283,11 @@ namespace shopapp.webui.Controllers
 
             await categoryService.CreateAsync(entity);
 
-            TempData["InfoMessage"] =$"{entity.Name} İsimli kategori eklendi.";
-            TempData["InfoMessageCss"] ="success";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli kategori eklendi.",
+                AlertType = "success"
+            });
 
             return RedirectToAction("CategoryList");
         }
@@ -321,8 +338,11 @@ namespace shopapp.webui.Controllers
 
             categoryService.Update(entity);
 
-            TempData["InfoMessage"] =$"{model.Name} İsimli kategori güncellendi.";
-            TempData["InfoMessageCss"] ="warning";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli kategori güncellendi.",
+                AlertType = "warning"
+            });
 
             return RedirectToAction("CategoryList");
         }
@@ -343,8 +363,11 @@ namespace shopapp.webui.Controllers
 
             categoryService.Delete(entity);
 
-            TempData["InfoMessage"] =$"{entity.Name} İsimli kategori silindi.";
-            TempData["InfoMessageCss"] ="danger";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"{entity.Name} İsimli kategori silindi.",
+                AlertType = "danger"
+            });
 
             return RedirectToAction("CategoryList");
         }

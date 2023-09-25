@@ -1,11 +1,11 @@
-@{
-    var css = @TempData["InfoMessageCss"];
-}
+@model InfoMessage
 
-<div class="alert alert-@css alert-dismissible fade show" role="alert">
+<div class="alert alert-@Model.AlertType alert-dismissible fade show" role="alert">
     <h5 class="alert-heading">
-        @TempData["InfoMessage"]
+        @Model.Title
     </h5>
-    <p>@TempData["InfoMessageDesc"]</p>
+    <p>@Model.Message</p>
     <button id="btn_close" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+
+

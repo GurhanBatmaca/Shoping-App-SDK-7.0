@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@* @{
+    var message1 = TempData.Get<InfoMessage>("message");
+} *@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,9 +26,9 @@
     <div class="main container-lg">
         <main  class="pb-3">
 
-            @if(@TempData["InfoMessage"] != null)
+            @if(@TempData["message"] != null)
             {
-                @await Html.PartialAsync("_infoMessage")
+                <partial name="_infoMessage" model="@(TempData.Get<InfoMessage>("message"))" />  
             }
 
             @RenderBody()

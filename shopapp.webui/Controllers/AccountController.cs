@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using shopapp.webui.EmailServices;
+using shopapp.webui.Extentions;
 using shopapp.webui.Identity;
 using shopapp.webui.Models;
 
@@ -150,18 +151,24 @@ namespace shopapp.webui.Controllers
 
             if(user == null)
             {
-                TempData["InfoMessage"] =$"Giriş yapılamadı.";
-                TempData["InfoMessageDesc"] ="Kullanıcı kayıdı bulunamadı.";
-                TempData["InfoMessageCss"] ="danger";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Giriş yapılamadı.",
+                    Message = $"Kullanıcı kayıdı bulunamadı.",
+                    AlertType = "danger"
+                }); 
 
                 return View(model);
             }
 
             if(!await userManager.IsEmailConfirmedAsync(user))
             {
-                TempData["InfoMessage"] =$"Giriş yapılamadı.";
-                TempData["InfoMessageDesc"] ="Lütfen email adresinizi onaylayın.";
-                TempData["InfoMessageCss"] ="danger";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Giriş yapılamadı.",
+                    Message = $"Lütfen email adresinizi onaylayın.",
+                    AlertType = "danger"
+                }); 
 
                 ModelState.AddModelError("","Email hesabınızı onaylayınız");
                 return View(model);
@@ -171,8 +178,11 @@ namespace shopapp.webui.Controllers
 
             if(result.Succeeded)
             {
-                TempData["InfoMessage"] =$"Hoşgeldin {user.UserName}.";
-                TempData["InfoMessageCss"] ="success";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = $"Hoşgeldin {user.UserName}.",
+                    AlertType = "success"
+                });
 
                 return Redirect("~/");
             }
@@ -192,9 +202,12 @@ namespace shopapp.webui.Controllers
             
             await signInManager!.SignOutAsync();
 
-            TempData["InfoMessage"] =$"Oturum kapatıldı.";
-            TempData["InfoMessageDesc"] ="Güvenli şekilde çıkış yapıldı.";
-            TempData["InfoMessageCss"] ="warning";
+            TempData.Put("message",new InfoMessage
+            {
+                    Title = "Oturum kapatıldı.",
+                    Message = $"Güvenli şekilde çıkış yapıldı.",
+                    AlertType = "warning"
+            }); 
 
             return Redirect("~/");
         }
@@ -203,8 +216,11 @@ namespace shopapp.webui.Controllers
             if(string.IsNullOrEmpty(token) || string.IsNullOrEmpty(userId))
             {
 
-                TempData["InfoMessage"] =$"Geçersiz Token.";
-                TempData["InfoMessageCss"] ="danger";
+                TempData.Put("message",new InfoMessage
+                {
+                        Title = "Geçersiz Token.",
+                        AlertType = "danger"
+                });
 
                 return View();
             }
@@ -213,8 +229,11 @@ namespace shopapp.webui.Controllers
 
             if(user == null)
             {
-                TempData["InfoMessage"] =$"Hesabınız onaylanmadı.";
-                TempData["InfoMessageCss"] ="danger";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Geçersiz kullanıcı.",
+                    AlertType = "danger"
+                });
 
                 return View();
             }
@@ -223,9 +242,13 @@ namespace shopapp.webui.Controllers
 
             if(result.Succeeded)
             {
-                TempData["InfoMessage"] =$"Hesabınız onaylandı.";
-                TempData["InfoMessageDesc"] =$"Giriş yapabilirsiniz.";
-                TempData["InfoMessageCss"] ="success";
+
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Hesabınız onaylandı.",
+                    Message = $"Giriş yapabilirsiniz.",
+                    AlertType = "success"
+                }); 
 
                 return RedirectToAction("Login");
             }
@@ -264,8 +287,11 @@ namespace shopapp.webui.Controllers
 
             await emailSender!.SendEmailAsync(model.Email!,"Parola sıfırlama.",$"Şifrenizi yenilemek için lütfen <a href='http://localhost:5182{url}'>linke</a> tıklayın.");
 
-            TempData["InfoMessage"] =$"Parolanızı sıfırlamak için mail adresinizi kontrol edin..";
-            TempData["InfoMessageCss"] ="warning";
+            TempData.Put("message",new InfoMessage
+            {
+                Title = "Parolanızı sıfırlamak için mail adresinizi kontrol edin.",
+                AlertType = "warning"
+            }); 
 
             return RedirectToAction("Login");
         }
@@ -275,8 +301,12 @@ namespace shopapp.webui.Controllers
         {
             if(string.IsNullOrEmpty(token) || string.IsNullOrEmpty(userId))
             {
-                TempData["InfoMessage"] =$"Geçersiz Token.";
-                TempData["InfoMessageCss"] ="danger";
+
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Geçersiz Token.",
+                    AlertType = "danger"
+                });
 
                 ModelState.AddModelError("","Geçersiz Token.");
 
@@ -303,8 +333,11 @@ namespace shopapp.webui.Controllers
 
             if(user == null)
             {
-                TempData["InfoMessage"] =$"Mail adresi hatası.";
-                TempData["InfoMessageCss"] ="danger";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Mail adresi hatası.",
+                    AlertType = "danger"
+                });
 
                 ModelState.AddModelError("","Mail adresi bulunamadı.");
 
@@ -315,8 +348,11 @@ namespace shopapp.webui.Controllers
 
             if(result.Succeeded)
             {
-                TempData["InfoMessage"] =$"Yeni şifre kaydedildi.";
-                TempData["InfoMessageCss"] ="success";
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = "Yeni şifre kaydedildi.",
+                    AlertType = "success"
+                });
 
                 return RedirectToAction("Login");
             }
