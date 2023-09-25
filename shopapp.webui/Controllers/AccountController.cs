@@ -14,13 +14,15 @@ namespace shopapp.webui.Controllers
         private readonly SignInManager<ApplicationUser>? signInManager; 
         private readonly RoleManager<IdentityRole>? roleManager; 
         private readonly IEmailSender? emailSender;
+        private readonly IConfiguration configuration;
 
-        public AccountController(UserManager<ApplicationUser>? _userManager,SignInManager<ApplicationUser>? _signInManager,RoleManager<IdentityRole> _roleManager,IEmailSender? _emailSender)
+        public AccountController(UserManager<ApplicationUser>? _userManager,SignInManager<ApplicationUser>? _signInManager,RoleManager<IdentityRole> _roleManager,IEmailSender? _emailSender,IConfiguration _configuration)
         {
             userManager = _userManager;
             signInManager = _signInManager;
             roleManager = _roleManager;
             emailSender = _emailSender;
+            configuration = _configuration;
         }
         
         [HttpGet]
@@ -226,6 +228,8 @@ namespace shopapp.webui.Controllers
                     Message = $"Giriş yapabilirsiniz.",
                     AlertType = "success"
                 }); 
+
+                await userManager.AddToRoleAsync(user,configuration["Identity:Customer:Role"]!);
 
                 return RedirectToAction("Login");
             }
