@@ -6,7 +6,7 @@ namespace shopapp.data.Abstract
     {
 
         Task InitializeCart(string userId);
-        // Task<Cart> GetByUserId(string userId);
+        Task<Cart?> GetByUserId(string userId);
 
     }
 }

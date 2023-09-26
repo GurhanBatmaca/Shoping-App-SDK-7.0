@@ -24,5 +24,33 @@ namespace shopapp.business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public async Task AddToCart(string userId,int productId, int quantity)
+        {
+            var cart = await GetByUserId(userId);
+
+            var index = cart!.CartItems!.FindIndex(i => i.ProductId == productId);
+
+            if(index < 0)
+            {
+                cart.CartItems.Add(new CartItem() 
+                {
+                    ProductId = productId,
+                    Quantity = quantity,
+                    CartId = cart.Id
+                });
+            }
+            else
+            {
+                cart.CartItems[index].Quantity += quantity;
+            }
+
+            unitOfWork.Carts.Update(cart);
+        }
+
+        public async Task<Cart?> GetByUserId(string userId)
+        {
+            return await unitOfWork.Carts.GetByUserId(userId);
+        }
     }
 }

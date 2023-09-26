@@ -3,7 +3,6 @@ namespace shopapp.entity
     public class CartItem
     {
         public int Id { get; set; }
-
         public int ProductId { get; set; }
         public Product? Product { get; set; }
         
