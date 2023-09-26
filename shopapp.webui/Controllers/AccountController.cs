@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using shopapp.business.Abstract;
 using shopapp.webui.EmailServices;
 using shopapp.webui.Extentions;
 using shopapp.webui.Identity;
@@ -14,14 +15,16 @@ namespace shopapp.webui.Controllers
         private readonly SignInManager<ApplicationUser>? signInManager; 
         private readonly RoleManager<IdentityRole>? roleManager; 
         private readonly IEmailSender? emailSender;
+        private readonly ICartService cartService;
         private readonly IConfiguration configuration;
 
-        public AccountController(UserManager<ApplicationUser>? _userManager,SignInManager<ApplicationUser>? _signInManager,RoleManager<IdentityRole> _roleManager,IEmailSender? _emailSender,IConfiguration _configuration)
+        public AccountController(UserManager<ApplicationUser>? _userManager,SignInManager<ApplicationUser>? _signInManager,RoleManager<IdentityRole> _roleManager,IEmailSender? _emailSender,ICartService _cartService,IConfiguration _configuration)
         {
             userManager = _userManager;
             signInManager = _signInManager;
             roleManager = _roleManager;
             emailSender = _emailSender;
+            cartService = _cartService;
             configuration = _configuration;
         }
         
@@ -230,6 +233,8 @@ namespace shopapp.webui.Controllers
                 }); 
 
                 await userManager.AddToRoleAsync(user,configuration["Identity:Customer:Role"]!);
+
+                await cartService.InitializeCart(user.Id);
 
                 return RedirectToAction("Login");
             }

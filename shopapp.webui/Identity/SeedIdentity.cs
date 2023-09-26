@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Identity;
+using shopapp.business.Abstract;
 
 namespace shopapp.webui.Identity
 {
     public static class SeedIdentity
     {
-        public static async Task Seed(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManager,IConfiguration configuration)
+        public static async Task Seed(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManager,ICartService cartService,IConfiguration configuration)
         {           
             var admin = new ApplicationUser()
             {
@@ -20,6 +21,7 @@ namespace shopapp.webui.Identity
             if(adminUserExist == null)
             {
                 await userManager!.CreateAsync(admin,configuration["Identity:Admin:Password"]!);
+                await cartService.InitializeCart(admin.Id);
             }
 
             var adminRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Admin:Role"]!);
@@ -50,6 +52,7 @@ namespace shopapp.webui.Identity
             if(CustomerUserExist == null)
             {
                 await userManager!.CreateAsync(user,configuration["Identity:Customer:Password"]!);
+                await cartService.InitializeCart(user.Id);
             }
 
             var customerRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Customer:Role"]!);

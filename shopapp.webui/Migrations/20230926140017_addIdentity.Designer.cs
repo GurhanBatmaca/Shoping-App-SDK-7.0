@@ -12,7 +12,7 @@ using shopapp.webui.Identity;
 namespace shopapp.webui.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230925144935_addIdentity")]
+    [Migration("20230926140017_addIdentity")]
     partial class addIdentity
     {
         /// <inheritdoc />

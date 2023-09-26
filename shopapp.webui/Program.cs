@@ -63,6 +63,7 @@ builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
 builder.Services.AddScoped<IProductService,ProductManager>();   
 builder.Services.AddScoped<ICategoryService,CategoryManager>();   
+builder.Services.AddScoped<ICartService,CartManager>();   
 
 builder.Services.AddScoped<IEmailSender,SmtpEmailSender>( i => 
     new SmtpEmailSender(
@@ -78,13 +79,17 @@ var app = builder.Build();
 
 using(var scope = app.Services.CreateScope())
 {
-    //Resolve ASP .NET Core Identity with DI help
+
     var userManager = (UserManager<ApplicationUser>?)scope.ServiceProvider.GetService(typeof(UserManager<ApplicationUser>));
+
     var roleManager = (RoleManager<IdentityRole>?)scope.ServiceProvider.GetService(typeof(RoleManager<IdentityRole>));
+
+    var cartService = (ICartService?)scope.ServiceProvider.GetService(typeof(ICartService));
+
     // do you things here
 
-    var configurationManager = builder.Configuration;
-    SeedIdentity.Seed(userManager!,roleManager!,configurationManager).Wait();
+    var configuration = builder.Configuration;
+    SeedIdentity.Seed(userManager!,roleManager!,cartService!,configuration).Wait();
 
 }
 

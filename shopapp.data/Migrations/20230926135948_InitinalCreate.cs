@@ -185,11 +185,11 @@ namespace shopapp.data.Migrations
                 columns: new[] { "Id", "DateAdded", "Description", "ImageUrl", "IsAproved", "IsHome", "IsPopular", "Name", "Price", "Url" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(408), "Yeni Kaşar", "1.jpg", true, true, true, "Yeni Kaşar", 250.0, "yeni-kasar" },
-                    { 2, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(423), "Eski Kaşar", "2.jpg", true, true, false, "Eski Kaşar", 280.0, "eski-kasar" },
-                    { 3, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(424), "Kara Kovan Balı", "3.jpg", true, true, true, "Kara Kovan Balı", 280.0, "kara-kovan-bali" },
-                    { 4, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(426), "Petek Çiçek Balı", "4.jpg", true, true, false, "Petek Çiçek Balı", 280.0, "petek-cicek-bali" },
-                    { 5, new DateTime(2023, 9, 25, 17, 48, 47, 894, DateTimeKind.Local).AddTicks(427), "Süzme Çiçek Balı", "5.jpg", true, true, true, "Süzme Çiçek Balı", 280.0, "suzme-cicek-bali" }
+                    { 1, new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5077), "Yeni Kaşar", "1.jpg", true, true, true, "Yeni Kaşar", 250.0, "yeni-kasar" },
+                    { 2, new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5100), "Eski Kaşar", "2.jpg", true, true, false, "Eski Kaşar", 280.0, "eski-kasar" },
+                    { 3, new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5102), "Kara Kovan Balı", "3.jpg", true, true, true, "Kara Kovan Balı", 280.0, "kara-kovan-bali" },
+                    { 4, new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5104), "Petek Çiçek Balı", "4.jpg", true, true, false, "Petek Çiçek Balı", 280.0, "petek-cicek-bali" },
+                    { 5, new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5106), "Süzme Çiçek Balı", "5.jpg", true, true, true, "Süzme Çiçek Balı", 280.0, "suzme-cicek-bali" }
                 });
 
             migrationBuilder.InsertData(
