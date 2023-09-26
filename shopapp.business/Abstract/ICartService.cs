@@ -4,8 +4,8 @@ namespace shopapp.business.Abstract
 {
     public interface ICartService: IValidator<Cart>
     {
-        Task InitializeCart(string userId);
-        Task<Cart?> GetByUserId(string userId);
-        Task AddToCart(string userId,int productId,int quantity);
+        Task InitializeCartAsync(string userId);
+        Task<Cart?> GetCartByUserIdAsync(string userId);
+        Task AddToCartAsync(string userId,int productId,int quantity);
     }
 }

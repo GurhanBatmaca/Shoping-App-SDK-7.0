@@ -21,7 +21,7 @@ namespace shopapp.webui.Identity
             if(adminUserExist == null)
             {
                 await userManager!.CreateAsync(admin,configuration["Identity:Admin:Password"]!);
-                await cartService.InitializeCart(admin.Id);
+                await cartService.InitializeCartAsync(admin.Id);
             }
 
             var adminRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Admin:Role"]!);
@@ -52,7 +52,7 @@ namespace shopapp.webui.Identity
             if(CustomerUserExist == null)
             {
                 await userManager!.CreateAsync(user,configuration["Identity:Customer:Password"]!);
-                await cartService.InitializeCart(user.Id);
+                await cartService.InitializeCartAsync(user.Id);
             }
 
             var customerRoleExist = await roleManager.FindByNameAsync(configuration["Identity:Customer:Role"]!);

@@ -15,7 +15,7 @@ namespace shopapp.data.Concrete.EfCore
             get {return context as ShopContext;}  
         }
 
-        public async Task<Cart?> GetByUserId(string userId)
+        public async Task<Cart?> GetCartByUserIdAsync(string userId)
         {
             return await ShopContext!.Carts
                                     .Include(i => i.CartItems!)
@@ -24,7 +24,7 @@ namespace shopapp.data.Concrete.EfCore
         }
 
 
-        public async Task InitializeCart(string userId)
+        public async Task InitializeCartAsync(string userId)
         {
             ShopContext!.Carts.Add(new Cart()
             {

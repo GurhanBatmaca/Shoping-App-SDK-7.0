@@ -13,9 +13,9 @@ namespace shopapp.business.Concrete
             unitOfWork = _unitOfWork;
         }
 
-        public async Task InitializeCart(string userId)
+        public async Task InitializeCartAsync(string userId)
         {          
-            await unitOfWork.Carts.InitializeCart(userId);
+            await unitOfWork.Carts.InitializeCartAsync(userId);
         }
 
         public string ErrorMessage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -25,9 +25,9 @@ namespace shopapp.business.Concrete
             throw new NotImplementedException();
         }
 
-        public async Task AddToCart(string userId,int productId, int quantity)
+        public async Task AddToCartAsync(string userId,int productId, int quantity)
         {
-            var cart = await GetByUserId(userId);
+            var cart = await GetCartByUserIdAsync(userId);
 
             var index = cart!.CartItems!.FindIndex(i => i.ProductId == productId);
 
@@ -48,9 +48,9 @@ namespace shopapp.business.Concrete
             unitOfWork.Carts.Update(cart);
         }
 
-        public async Task<Cart?> GetByUserId(string userId)
+        public async Task<Cart?> GetCartByUserIdAsync(string userId)
         {
-            return await unitOfWork.Carts.GetByUserId(userId);
+            return await unitOfWork.Carts.GetCartByUserIdAsync(userId);
         }
     }
 }

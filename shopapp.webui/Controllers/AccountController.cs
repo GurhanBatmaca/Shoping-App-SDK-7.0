@@ -234,7 +234,7 @@ namespace shopapp.webui.Controllers
 
                 await userManager.AddToRoleAsync(user,configuration["Identity:Customer:Role"]!);
 
-                await cartService.InitializeCart(user.Id);
+                await cartService.InitializeCartAsync(user.Id);
 
                 return RedirectToAction("Login");
             }
