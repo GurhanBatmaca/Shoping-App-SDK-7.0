@@ -112,6 +112,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "cartindex",
+    pattern: "sepetim",
+    defaults: new { controller = "Cart", action = "Index"}
+);
+
+app.MapControllerRoute(
     name: "accountregister",
     pattern: "uyelik/uyeol",
     defaults: new { controller = "Account", action = "Register"}

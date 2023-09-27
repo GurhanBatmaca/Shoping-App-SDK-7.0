@@ -7,6 +7,7 @@ namespace shopapp.data.Abstract
 
         Task InitializeCartAsync(string userId);
         Task<Cart?> GetCartByUserIdAsync(string userId);
+        Task DeleteFromCartAsync(int cartId,int productId);
 
     }
 }

@@ -31,16 +31,19 @@
         }
       </ul>
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a href="/account/manage" class="nav-link">
-            Sepetim <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/account/manage" class="nav-link">
-            Siparişlerim <i class="fa-solid fa-truck-fast"></i>
-          </a>
-        </li>
+        @if(User.Identity!.IsAuthenticated!)
+        {
+          <li class="nav-item">
+            <a href="/sepetim" class="nav-link">
+              Sepetim <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/account/manage" class="nav-link">
+              Siparişlerim <i class="fa-solid fa-truck-fast"></i>
+            </a>
+          </li>
+        }
         @if(User.Identity!.IsAuthenticated!)
         {
             <li class="nav-item">
