@@ -112,6 +112,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "checkout",
+    pattern: "odeme",
+    defaults: new {controller="Order", action="Checkout"}
+);
+
+app.MapControllerRoute(
     name: "cartindex",
     pattern: "sepetim",
     defaults: new { controller = "Cart", action = "Index"}

@@ -1,0 +1,118 @@
+@model OrderModel
+
+<h1>Ödeme</h1>
+<hr>
+ <form method="post" asp-controller="Order" asp-action="Checkout">
+    <div asp-validation-summary="All" class="text-danger"></div>
+<div class="row">
+    <div class="col-md-8">
+        <h4 class="mb-3">Alıcı Bilgileri</h4>
+       
+            <input type="hidden" asp-for="@Model.CartModel.CartId">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label asp-for="@Model.FirstName"></label>
+                    <input asp-for="@Model.FirstName" class="form-control">
+                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="@Model.LastName"></label>
+                    <input asp-for="@Model.LastName" class="form-control">
+                    <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Address"></label>
+                <textarea asp-for="@Model.Address" class="form-control"></textarea>
+                <span asp-validation-for="@Model.Address" class="text-danger"></span>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label asp-for="@Model.City"></label>
+                    <input asp-for="@Model.City" class="form-control">
+                    <span asp-validation-for="@Model.City" class="text-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.Phone"></label>
+                    <input asp-for="@Model.Phone" class="form-control">
+                    <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                </div>
+                 <div class="col-md-4">
+                    <label asp-for="@Model.Email"></label>
+                    <input asp-for="@Model.Email" class="form-control">
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <h4 class="mb-3">Ödeme Bilgileri</h4>
+            <hr class="mb-3">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label asp-for="@Model.CardName"></label>
+                    <input asp-for="@Model.CardName" class="form-control">
+                    <span asp-validation-for="@Model.CardName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="@Model.CardNumber"></label>
+                    <input asp-for="@Model.CardNumber" class="form-control">
+                    <span asp-validation-for="@Model.CardNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label asp-for="@Model.ExpirationMonth"></label>
+                    <input asp-for="@Model.ExpirationMonth" class="form-control">
+                    <span asp-validation-for="@Model.ExpirationMonth" class="text-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.ExpirationYear"></label>
+                    <input asp-for="@Model.ExpirationYear" class="form-control">
+                    <span asp-validation-for="@Model.ExpirationYear" class="text-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.Cvc"></label>
+                    <input asp-for="@Model.Cvc" class="form-control">
+                    <span asp-validation-for="@Model.Cvc" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg ">Submit</button>
+            </div>
+           
+        
+
+    </div>
+    <div class="col-md-4">
+        <h4 class="mb-3">
+            <span>Özet Bilgiler</span>
+        </h4>
+        <ul class="list-group mb-3">
+
+                                @for (int i = 0; i < Model.CartModel.CartItems.Count; i++)
+                {
+
+                    <input type="hidden" name="Model.CartModel.CartItems[@i].Name" value="@Model.CartModel.CartItems[@i].Name">
+
+                    <input type="hidden" name="Model.CartModel.CartItems[@i].Quantity" value="@Model.CartModel.CartItems[@i].Quantity">
+                    <input type="hidden" name="Model.CartModel.CartItems[@i].Price" value="@Model.CartModel.CartItems[@i].Price">
+
+                }
+
+            @foreach (var item in Model.CartModel.CartItems)
+            {
+                <li class="row border py-3">
+                    <div class="col-4">
+                        <h6>@item.Name</h6>
+                    </div>
+                    <span class="text-muted col-4">@item.Quantity x @item.Price.ToString("c")</span>
+                    <span class="text-muted col-4">@item.TotalPrice().ToString("c")</span>
+                </li>
+            }
+
+            <li class="row border py-3">
+                <span class="col-8 bold">Toplam (TL)</span>
+                <strong class="col-4">@Model.CartModel.TotalPrice().ToString("c") TL</strong>
+            </li>
+        </ul>
+    </div>
+</div>
+</form>
