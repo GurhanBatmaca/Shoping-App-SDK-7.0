@@ -2,6 +2,7 @@
 
 <h1>Ödeme</h1>
 <hr>
+
  <form method="post" asp-controller="Order" asp-action="Checkout">
     <div asp-validation-summary="All" class="text-danger"></div>
 <div class="row">
@@ -87,15 +88,15 @@
         </h4>
         <ul class="list-group mb-3">
 
-                                @for (int i = 0; i < Model.CartModel.CartItems.Count; i++)
-                {
+            @for (int i = 0; i < Model.CartModel.CartItems.Count; i++)
+            {
 
-                    <input type="hidden" name="Model.CartModel.CartItems[@i].Name" value="@Model.CartModel.CartItems[@i].Name">
+                <input type="hidden" name="Model.CartModel.CartItems[@i].Name" value="@Model.CartModel.CartItems[@i].Name">
 
-                    <input type="hidden" name="Model.CartModel.CartItems[@i].Quantity" value="@Model.CartModel.CartItems[@i].Quantity">
-                    <input type="hidden" name="Model.CartModel.CartItems[@i].Price" value="@Model.CartModel.CartItems[@i].Price">
+                <input type="hidden" name="Model.CartModel.CartItems[@i].Quantity" value="@Model.CartModel.CartItems[@i].Quantity">
+                <input type="hidden" name="Model.CartModel.CartItems[@i].Price" value="@Model.CartModel.CartItems[@i].Price">
 
-                }
+            }
 
             @foreach (var item in Model.CartModel.CartItems)
             {
