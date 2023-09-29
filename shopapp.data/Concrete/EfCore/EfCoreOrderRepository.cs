@@ -14,5 +14,6 @@ namespace shopapp.data.Concrete.EfCore
         {
             get { return context as ShopContext; }
         }
+
     }
 }

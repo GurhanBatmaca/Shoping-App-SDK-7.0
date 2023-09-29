@@ -15,6 +15,11 @@ namespace shopapp.business.Concrete
 
         public string ErrorMessage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public async Task CreateAsync(Order entity)
+        {
+            await unitOfWork.Orders.CreateAsync(entity);
+        }
+
         public bool Validation(Order entity)
         {
             throw new NotImplementedException();
