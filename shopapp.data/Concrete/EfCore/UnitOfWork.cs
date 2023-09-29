@@ -12,12 +12,15 @@ namespace shopapp.data.Concrete.EfCore
         private EfCoreProductRepository? productRepository;
         private EfCoreCategoryRepository? categoryRepository;
         private EfCoreCartRepository? cartRepository;
+        private EfCoreOrderRepository? orderRepository;
 
-        public IProductRepository Products => productRepository = productRepository ?? new  EfCoreProductRepository(context!);
+        public IProductRepository Products => productRepository = productRepository! ?? new  EfCoreProductRepository(context!);
 
-        public ICategoryRepository Categories => categoryRepository = categoryRepository ?? new EfCoreCategoryRepository(context!);
+        public ICategoryRepository Categories => categoryRepository = categoryRepository! ?? new EfCoreCategoryRepository(context!);
 
-        public ICartRepository Carts => cartRepository = cartRepository ?? new EfCoreCartRepository(context!);
+        public ICartRepository Carts => cartRepository = cartRepository! ?? new EfCoreCartRepository(context!);
+
+        public IOrderRepository Orders => orderRepository = orderRepository! ?? new EfCoreOrderRepository(context!);
 
         public void Dispose()
         {

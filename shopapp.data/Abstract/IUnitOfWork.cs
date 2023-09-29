@@ -5,5 +5,6 @@ namespace shopapp.data.Abstract
         IProductRepository Products {get;}
         ICategoryRepository Categories {get;}
         ICartRepository Carts {get;}
+        IOrderRepository Orders {get;}
     }
 }
