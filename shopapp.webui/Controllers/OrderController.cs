@@ -115,8 +115,42 @@ namespace shopapp.webui.Controllers
         public async Task<IActionResult> Orders()
         {
             var userId = userManager!.GetUserId(User);
-            var cart = await cartService!.GetCartByUserIdAsync(userId!);
-            return View();
+
+            var orders = await orderService!.GetInCompleteOrdersAsync(userId!);
+            
+            var orderWiewModelList = new List<OrderViewModel>();
+
+            var orderModel = new OrderViewModel();
+
+            foreach (var order in orders)
+            {
+
+                orderModel = new OrderViewModel();
+
+                orderModel.OrderId = order.Id;
+                orderModel.OrderNumber = order.OrderNumber;
+                orderModel.OrderDate = order.OrderDate;
+                orderModel.Phone = order.Phone;
+                orderModel.FirstName = order.FirstName;
+                orderModel.LastName = order.LastName;
+                orderModel.Email = order.Email;
+                orderModel.Address = order.Address;
+                orderModel.City = order.City;
+                orderModel.OrderState = order.OrderState;
+                orderModel.PaymentType = order.PaymentType;
+
+                orderModel.OrderItems = order.OrderItems!.Select(i => new OrderItemViewModel(){
+                    OrderItemId = i.Id,
+                    Name = i.Product!.Name,
+                    Price = (double)i.Price,
+                    Quantity = i.Quantity,
+                    ImageUrl = i.Product.ImageUrl
+                }).ToList();
+
+                orderWiewModelList.Add(orderModel);
+            }
+
+            return View(orderWiewModelList);
         }
 
     }
