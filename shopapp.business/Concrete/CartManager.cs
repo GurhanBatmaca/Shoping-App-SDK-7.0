@@ -57,5 +57,10 @@ namespace shopapp.business.Concrete
         {
             await unitOfWork.Carts.DeleteFromCartAsync(cartId,productId);
         }
+
+        public async Task ClearCartAsync(int cartId)
+        {
+            await unitOfWork.Carts.ClearCartAsync(cartId);
+        }
     }
 }

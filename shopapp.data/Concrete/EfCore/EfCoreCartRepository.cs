@@ -15,6 +15,18 @@ namespace shopapp.data.Concrete.EfCore
             get {return context as ShopContext;}  
         }
 
+        public async Task ClearCartAsync(int cartId)
+        {
+            var cartItems = await ShopContext!.CartItems       
+                                        .Where(i => i.CartId == cartId)
+                                        .ToListAsync();
+
+            ShopContext.CartItems.RemoveRange(cartItems);
+
+            await ShopContext.SaveChangesAsync();
+        }
+
+
         public async Task DeleteFromCartAsync(int cartId,int productId)
         {
             var entity = await ShopContext!.CartItems

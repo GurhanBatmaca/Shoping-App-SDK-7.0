@@ -10,9 +10,8 @@ namespace shopapp.webui.Helpers
             var order = new Order();
 
             order.OrderNumber = new Random().Next(111111,999999).ToString();
-            order.OrderState = EnumOrderState.completed;
+            order.OrderState = EnumOrderState.provision;
             order.PaymentType = EnumPaymentType.CrediCard;
-            order.OrderDate = new DateTime();
             order.FirstName = model.FirstName;
             order.LastName = model.LastName;
             order.Address = model.Address;
@@ -23,7 +22,6 @@ namespace shopapp.webui.Helpers
             order.Note = model.Note;
             order.ConversationId = model.ConversationId; 
             order.PaymentId = model.PaymentId;
-
 
             order.OrderItems = new List<OrderItem>();
 

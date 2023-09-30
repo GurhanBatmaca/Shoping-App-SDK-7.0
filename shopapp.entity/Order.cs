@@ -31,9 +31,9 @@ namespace shopapp.entity
 
     public enum EnumOrderState
     {
-        waiting=0,
-        unpaid=1,
-        completed=2
+        provision=0,
+        delivery=1,
+        delivered=2
     }
 
 }

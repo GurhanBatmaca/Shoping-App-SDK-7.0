@@ -52,8 +52,8 @@ namespace shopapp.webui.Models
         public string? Cvc { get; set; }
         public CartModel? CartModel { get; set; }
 
-
         public string? PaymentId { get; set; }
         public string? ConversationId { get; set; }
+
     }
 }

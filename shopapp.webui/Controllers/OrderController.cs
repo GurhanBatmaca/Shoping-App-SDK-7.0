@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using shopapp.business.Abstract;
+using shopapp.entity;
 using shopapp.webui.Extentions;
 using shopapp.webui.Helpers;
 using shopapp.webui.Identity;
@@ -89,10 +90,9 @@ namespace shopapp.webui.Controllers
                 var entity = ModelToEntity.OrderModelToOrderEntity(model,userId!);
 
                 await orderService!.CreateAsync(entity);
+                await cartService.ClearCartAsync(cart.Id);         
 
-                
-
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("SuccessPayment");
             }
 
             else 
@@ -105,6 +105,18 @@ namespace shopapp.webui.Controllers
                 return View(model);
             }
             
+        }
+
+        public IActionResult SuccessPayment()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Orders()
+        {
+            var userId = userManager!.GetUserId(User);
+            var cart = await cartService!.GetCartByUserIdAsync(userId!);
+            return View();
         }
 
 
