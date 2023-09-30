@@ -119,6 +119,5 @@ namespace shopapp.webui.Controllers
             return View();
         }
 
-
     }
 }

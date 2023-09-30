@@ -157,7 +157,9 @@ namespace shopapp.data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("OrderNumber")
                         .HasColumnType("nvarchar(max)");
@@ -256,7 +258,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 1,
-                            DateAdded = new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5077),
+                            DateAdded = new DateTime(2023, 9, 30, 14, 53, 35, 948, DateTimeKind.Local).AddTicks(4387),
                             Description = "Yeni Kaşar",
                             ImageUrl = "1.jpg",
                             IsAproved = true,
@@ -269,7 +271,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 2,
-                            DateAdded = new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5100),
+                            DateAdded = new DateTime(2023, 9, 30, 14, 53, 35, 948, DateTimeKind.Local).AddTicks(4405),
                             Description = "Eski Kaşar",
                             ImageUrl = "2.jpg",
                             IsAproved = true,
@@ -282,7 +284,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 3,
-                            DateAdded = new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5102),
+                            DateAdded = new DateTime(2023, 9, 30, 14, 53, 35, 948, DateTimeKind.Local).AddTicks(4407),
                             Description = "Kara Kovan Balı",
                             ImageUrl = "3.jpg",
                             IsAproved = true,
@@ -295,7 +297,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 4,
-                            DateAdded = new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5104),
+                            DateAdded = new DateTime(2023, 9, 30, 14, 53, 35, 948, DateTimeKind.Local).AddTicks(4409),
                             Description = "Petek Çiçek Balı",
                             ImageUrl = "4.jpg",
                             IsAproved = true,
@@ -308,7 +310,7 @@ namespace shopapp.data.Migrations
                         new
                         {
                             Id = 5,
-                            DateAdded = new DateTime(2023, 9, 26, 16, 59, 48, 747, DateTimeKind.Local).AddTicks(5106),
+                            DateAdded = new DateTime(2023, 9, 30, 14, 53, 35, 948, DateTimeKind.Local).AddTicks(4410),
                             Description = "Süzme Çiçek Balı",
                             ImageUrl = "5.jpg",
                             IsAproved = true,

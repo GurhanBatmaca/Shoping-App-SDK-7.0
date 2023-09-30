@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace shopapp.webui.Migrations
 {
     /// <inheritdoc />
-    public partial class addIdentity : Migration
+    public partial class IdentityInitinalCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
