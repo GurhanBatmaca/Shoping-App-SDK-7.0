@@ -125,6 +125,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "getorders",
+    pattern: "siparislerim",
+    defaults: new { controller = "Order", action = "Orders"}
+);
+
+app.MapControllerRoute(
     name: "accountregister",
     pattern: "uyelik/uyeol",
     defaults: new { controller = "Account", action = "Register"}

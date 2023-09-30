@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var orderItem in order.OrderItems)
+                @foreach (var orderItem in order.OrderItems!)
                 {
                     <tr>
                         <td><img src="~/img/@orderItem.ImageUrl" alt="" width="50"></td>
