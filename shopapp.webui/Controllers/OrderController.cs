@@ -11,11 +11,13 @@ namespace shopapp.webui.Controllers
     public class OrderController: Controller
     {
         private readonly ICartService? cartService;
+        private readonly IOrderService? orderService;
         private readonly UserManager<ApplicationUser>? userManager;
         private readonly IConfiguration configuration;
-        public OrderController(ICartService? _cartService,UserManager<ApplicationUser>? _userManager,IConfiguration _configuration)
+        public OrderController(ICartService? _cartService,IOrderService? _orderService,UserManager<ApplicationUser>? _userManager,IConfiguration _configuration)
         {
             cartService = _cartService;
+            orderService = _orderService;
             userManager = _userManager;
             configuration = _configuration;
         }
@@ -80,6 +82,15 @@ namespace shopapp.webui.Controllers
                     Message= "Ödeme başarılı",
                     AlertType ="success"
                 });
+
+                model.PaymentId = payment.PaymentId;
+                model.ConversationId = payment.ConversationId;
+
+                var entity = ModelToEntity.OrderModelToOrderEntity(model,userId!);
+
+                await orderService!.CreateAsync(entity);
+
+                
 
                 return RedirectToAction("Index","Home");
             }
