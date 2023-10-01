@@ -1,6 +1,6 @@
 @model List<OrderViewModel>
 
-    <h1>Orders</h1>
+    <h1>Siparişlerim</h1>
     <hr>
 
     @foreach (var order in Model)
@@ -8,9 +8,9 @@
        <table class="table table-bordered table-sm mb-3">
             <thead class="bg-primary">
                 <tr>
-                    <td colspan="2">Order Id: #@order.OrderNumber</td>
-                    <th>Price</th>
-                    <th>Quantity</th>
+                    <td colspan="2">Sipariş Id: #@order.OrderNumber</td>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,19 +19,20 @@
                     <tr>
                         <td><img src="~/img/@orderItem.ImageUrl" alt="" width="50"></td>
                         <td>@orderItem.Name</td>
-                        <td>@orderItem.Price</td>
+                        <td>@orderItem.Price.ToString("c")</td>
                         <td>@orderItem.Quantity</td>
+                        
                     </tr>
                 }
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="2">Customer Name</td>
+                    <td colspan="2">Müşteri Adı:</td>
                     <td>@order.FirstName @order.LastName</td>
-                    <td rowspan="6">Total: @order.TotalPrice().ToString("c")</td>
+                    <td rowspan="7">Toplam: @order.TotalPrice().ToString("c")</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Address: </td>
+                    <td colspan="2">Adres: </td>
                     <td>@order.Address</td>
                 </tr>
                 <tr>
@@ -49,6 +50,11 @@
                 <tr>
                     <td colspan="2">Payment Type: </td>
                     <td>@order.PaymentType</td>
+                    @* <td>@order.OrderDate.ToString("MM/dd/yyyy")</td> *@
+                </tr>
+                <tr>
+                    <td colspan="2">Sipariş Tarihi: </td>
+                    <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
                 </tr>
             </tfoot>
        </table> 
