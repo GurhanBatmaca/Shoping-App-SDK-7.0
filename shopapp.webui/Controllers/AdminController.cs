@@ -16,10 +16,12 @@ namespace shopapp.webui.Controllers
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
-        public AdminController(IProductService _productService,ICategoryService _categoryService)
+        private readonly IOrderService orderService;
+        public AdminController(IProductService _productService,ICategoryService _categoryService,IOrderService _orderService)
         {
             productService = _productService;
             categoryService = _categoryService;
+            orderService = _orderService;
         }
 
         public async Task<IActionResult> ProductList(int sayfa=1)
@@ -370,6 +372,50 @@ namespace shopapp.webui.Controllers
             });
 
             return RedirectToAction("CategoryList");
+        }
+    
+        public async Task<IActionResult> OrderList()
+        {
+            var orders = await orderService.GetAllOrdersAsync();
+
+            var orderWiewModelList = new List<OrderViewModel>();
+
+            var orderModel = new OrderViewModel();
+
+            foreach (var order in orders)
+            {
+
+                orderModel = new OrderViewModel();
+
+                orderModel.OrderId = order.Id;
+                orderModel.OrderNumber = order.OrderNumber;
+                orderModel.OrderDate = order.OrderDate;
+                orderModel.Phone = order.Phone;
+                orderModel.FirstName = order.FirstName;
+                orderModel.LastName = order.LastName;
+                orderModel.Email = order.Email;
+                orderModel.Address = order.Address;
+                orderModel.City = order.City;
+                orderModel.OrderState = order.OrderState;
+                orderModel.PaymentType = order.PaymentType;
+
+                orderModel.OrderItems = order.OrderItems!.Select(i => new OrderItemViewModel(){
+                    OrderItemId = i.Id,
+                    Name = i.Product!.Name,
+                    Price = (double)i.Price,
+                    Quantity = i.Quantity,
+                    ImageUrl = i.Product.ImageUrl
+                }).ToList();
+
+                orderWiewModelList.Add(orderModel);
+            }
+
+            return View(orderWiewModelList);
+        }
+    
+        public async Task<IActionResult> UpdateOrder(int orderId)
+        {
+            return View(orderId);
         }
     }
 }

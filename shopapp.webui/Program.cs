@@ -113,6 +113,25 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "adminupdateorder",
+    pattern: "admin/siparisguncelle/{orderId}",
+    defaults: new {controller="Admin", action="UpdateOrder"}
+);
+
+
+app.MapControllerRoute(
+    name: "adminorderlist",
+    pattern: "admin/siparislistesi",
+    defaults: new {controller="Admin", action="OrderList"}
+);
+
+app.MapControllerRoute(
+    name: "oderlist",
+    pattern: "/siparislerim",
+    defaults: new {controller="Order", action="OrderList"}
+);
+
+app.MapControllerRoute(
     name: "checkout",
     pattern: "odeme",
     defaults: new {controller="Order", action="Checkout"}

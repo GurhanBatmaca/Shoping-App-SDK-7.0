@@ -60,8 +60,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/ProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/UpdateOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Cart/Index.cshtml]
@@ -80,8 +88,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/Orders.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJzLmNzaHRtbA==
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/SuccessPayment.cshtml]

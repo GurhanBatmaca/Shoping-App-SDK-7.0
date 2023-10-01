@@ -16,6 +16,23 @@ namespace shopapp.data.Concrete.EfCore
             get { return context as ShopContext; }
         }
 
+        public async Task<List<Order>> GetAllOrdersAsync()
+        {
+            return await ShopContext!.Orders
+                                    .Include(i => i.OrderItems!)
+                                    .ThenInclude(i=>i.Product)
+                                    .ToListAsync();
+        }
+
+        public async Task<Order?> GetByIdWithItemsAsync(int orderId)
+        {
+            return await ShopContext!.Orders
+                                            .Where(i => i.Id == orderId)
+                                            .Include(i => i.OrderItems!)
+                                            .ThenInclude(i=>i.Product)
+                                            .FirstOrDefaultAsync();
+        }
+
         public async Task<List<Order>> GetOrdersAsync(string userId)
         {
             return await ShopContext!.Orders
@@ -24,5 +41,11 @@ namespace shopapp.data.Concrete.EfCore
                                     .Where(i => i.UserId == userId)
                                     .ToListAsync();
         }
+
+        public Task UpdateStateAsync(int orderId)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

@@ -24146,11 +24146,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\Order\\Orders.cshtml",
-      "TargetPath": "Views\\Order\\Orders.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\Shop\\Popular.cshtml",
       "TargetPath": "Views\\Shop\\Popular.cshtml",
       "FileKind": "mvc"
@@ -24213,6 +24208,21 @@
     {
       "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\Admin\\OrderList.cshtml",
+      "TargetPath": "Views\\Admin\\OrderList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\Order\\OrderList.cshtml",
+      "TargetPath": "Views\\Order\\OrderList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.webui\\Views\\Admin\\UpdateOrder.cshtml",
+      "TargetPath": "Views\\Admin\\UpdateOrder.cshtml",
       "FileKind": "mvc"
     }
   ]

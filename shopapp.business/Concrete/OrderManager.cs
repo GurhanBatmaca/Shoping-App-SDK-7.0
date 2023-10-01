@@ -20,9 +20,24 @@ namespace shopapp.business.Concrete
             await unitOfWork.Orders.CreateAsync(entity);
         }
 
+        public async Task<List<Order>> GetAllOrdersAsync()
+        {
+            return await unitOfWork.Orders.GetAllOrdersAsync();
+        }
+
+        public Task<Order?> GetByIdWithItemsAsync(int orderId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Order>> GetOrdersAsync(string userId)
         {
             return await unitOfWork.Orders.GetOrdersAsync(userId);
+        }
+
+        public Task UpdateStateAsync(int orderId)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Validation(Order entity)

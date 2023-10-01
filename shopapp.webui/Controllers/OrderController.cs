@@ -112,7 +112,7 @@ namespace shopapp.webui.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Orders()
+        public async Task<IActionResult> OrderList()
         {
             var userId = userManager!.GetUserId(User);
 
