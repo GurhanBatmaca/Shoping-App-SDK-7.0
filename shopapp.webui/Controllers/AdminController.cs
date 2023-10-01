@@ -413,9 +413,52 @@ namespace shopapp.webui.Controllers
             return View(orderWiewModelList);
         }
     
-        public async Task<IActionResult> UpdateOrder(int orderId)
+        [HttpGet]
+        public async Task<IActionResult> UpdateOrder(int? orderId)
         {
-            return View(orderId);
+            if(orderId == null)
+            {
+                TempData.Put("message",new InfoMessage
+                {
+                    Title = $"Sipariş bulunamadı.",
+                    Message="Sipariş numarası hatalı.",
+                    AlertType = "danger"
+                });
+                return RedirectToAction("OrderList");
+            }
+
+            var order = await orderService.GetByIdWithItemsAsync((int)orderId);
+
+            var orderModel = new OrderViewModel()
+            {
+                OrderId = order!.Id,
+                OrderNumber = order.OrderNumber,
+                OrderDate = order.OrderDate,
+                Phone = order.Phone,
+                FirstName = order.FirstName,
+                LastName = order.LastName,
+                Email = order.Email,
+                Address = order.Address,
+                City = order.City,
+                OrderState = order.OrderState,
+                PaymentType = order.PaymentType,
+
+                OrderItems = order.OrderItems!.Select(i => new OrderItemViewModel(){
+                    OrderItemId = i.Id,
+                    Name = i.Product!.Name,
+                    Price = (double)i.Price,
+                    Quantity = i.Quantity,
+                    ImageUrl = i.Product.ImageUrl
+                }).ToList()
+            };
+
+            return View(orderModel);
+        }
+    
+        [HttpPost]
+        public async Task<IActionResult> UpdateOrder(OrderViewModel model)
+        {
+            return View();
         }
     }
 }

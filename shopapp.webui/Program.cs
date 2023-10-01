@@ -114,7 +114,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "adminupdateorder",
-    pattern: "admin/siparisguncelle/{orderId}",
+    pattern: "admin/siparisguncelle/{orderId?}",
     defaults: new {controller="Admin", action="UpdateOrder"}
 );
 

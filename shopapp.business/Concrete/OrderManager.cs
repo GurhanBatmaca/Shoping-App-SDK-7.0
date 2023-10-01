@@ -25,9 +25,9 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Orders.GetAllOrdersAsync();
         }
 
-        public Task<Order?> GetByIdWithItemsAsync(int orderId)
+        public async Task<Order?> GetByIdWithItemsAsync(int orderId)
         {
-            throw new NotImplementedException();
+            return await unitOfWork.Orders.GetByIdWithItemsAsync(orderId);
         }
 
         public async Task<List<Order>> GetOrdersAsync(string userId)
@@ -35,9 +35,9 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Orders.GetOrdersAsync(userId);
         }
 
-        public Task UpdateStateAsync(int orderId)
+        public async Task UpdateStateAsync(int orderId)
         {
-            throw new NotImplementedException();
+            await unitOfWork.Orders.UpdateStateAsync(orderId);
         }
 
         public bool Validation(Order entity)

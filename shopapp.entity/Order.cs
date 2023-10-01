@@ -33,7 +33,8 @@ namespace shopapp.entity
     {
         provision=0,
         delivery=1,
-        delivered=2
+        delivered=2,
+        canceled=3
     }
 
 }
