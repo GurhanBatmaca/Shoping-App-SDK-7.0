@@ -47,7 +47,7 @@
                     <td colspan="2">Sipariş Durumu: </td>
                     <td>
                     @(
-                        order.OrderState.ToString() == "provision" ? "Hazırlanıyor" : order.OrderState.ToString() == "canceled" ? "İptal edildi": "x"
+                        order.OrderState.ToString() == "provision" ? "Hazırlanıyor" : order.OrderState.ToString() == "delivery" ? "Kargoda": order.OrderState.ToString() == "canceled" ? "İptal edildi": "Teslim Edildi"
                     )
                     </td>
                 </tr>
