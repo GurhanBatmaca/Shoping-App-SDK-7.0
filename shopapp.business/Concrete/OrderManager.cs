@@ -20,9 +20,9 @@ namespace shopapp.business.Concrete
             await unitOfWork.Orders.CreateAsync(entity);
         }
 
-        public async Task<List<Order>> GetInCompleteOrdersAsync(string userId)
+        public async Task<List<Order>> GetOrdersAsync(string userId)
         {
-            return await unitOfWork.Orders.GetInCompleteOrdersAsync(userId);
+            return await unitOfWork.Orders.GetOrdersAsync(userId);
         }
 
         public bool Validation(Order entity)

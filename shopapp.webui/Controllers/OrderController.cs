@@ -116,7 +116,7 @@ namespace shopapp.webui.Controllers
         {
             var userId = userManager!.GetUserId(User);
 
-            var orders = await orderService!.GetInCompleteOrdersAsync(userId!);
+            var orders = await orderService!.GetOrdersAsync(userId!);
             
             var orderWiewModelList = new List<OrderViewModel>();
 

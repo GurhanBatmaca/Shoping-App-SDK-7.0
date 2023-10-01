@@ -40,17 +40,24 @@
                     <td>@order.Email</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Phone: </td>
-                    <td>@order.Phone</td>
+                    <td colspan="2">Telefon: </td>
+                    <td>0@(order.Phone)</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Order Status: </td>
-                    <td>@order.OrderState</td>
+                    <td colspan="2">Sipariş Durumu: </td>
+                    <td>
+                    @(
+                        order.OrderState.ToString() == "provision" ? "Hazırlanıyor" : order.OrderState.ToString() == "delivery" ? "Kargoda": "Teslim edildi"
+                    )
+                    </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Payment Type: </td>
-                    <td>@order.PaymentType</td>
-                    @* <td>@order.OrderDate.ToString("MM/dd/yyyy")</td> *@
+                    <td colspan="2">Ödeme Tipi: </td>
+                    <td>
+                    @(
+                        order.PaymentType.ToString() == "CrediCard" ? "Kredi Kartı" : order.PaymentType.ToString() == "Eft" ? "EFT": "Nakit"
+                    )
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">Sipariş Tarihi: </td>
