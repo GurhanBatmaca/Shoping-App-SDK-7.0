@@ -5,20 +5,94 @@
 
 <div class="row">
     <div class="col-md-6">
-        <form asp-controller="Admin" asp-action="UpdateOrder"  method="post">
-        <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">Durum</label>
-        <select class="form-select" id="inputGroupSelect01">
-            <option selected disabled>Sipariş durumu...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
+        <div>
+            <h4>Sipariş Özeti</h4>
+            <hr>
+            <ul class="list-group mb-3">
+                <li class="list-group-item ">
+                    <div class="row">
+                        <div class="col-6 border-end">Sipariş Durumu:</div>
+                        <div class="col-6">@Model.OrderState</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6 border-end">Sipariş Tarihi:</div>
+                        <div class="col-6">@Model.OrderDate.ToString("MM/dd/yyyy")</div>
+                    </div>
+                </li>
+                <li class="list-group-item ">
+                    <div class="row">
+                        <div class="col-6 border-end">Sipariş Id:</div>
+                        <div class="col-6">@Model.OrderId</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6 border-end">Toplam:</div>
+                        <div class="col-6">@Model.TotalPrice().ToString("c")</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6 border-end">Toplam:</div>
+                        <div class="col-6">
+                            @(
+                                Model.PaymentType.ToString() == "CrediCard" ? "Kredi Kartı" : Model.PaymentType.ToString() == "Eft" ? "EFT": "Nakit"
+                            )
+                        </div>
+                    </div>
+                </li>
+
+                 
+
+        </ul>
         </div>
-    </form>
+        <div>
+            <form asp-controller="Admin" asp-action="UpdateOrder"  method="post">
+            <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Durum</label>
+            <select class="form-select" id="inputGroupSelect01">
+                <option selected disabled>@Model.OrderState</option>
+                <option value="0">Hazırlanıyor</option>
+                <option value="1">Kargoda</option>
+                <option value="2">Teslim Edildi</option>
+                <option value="3">İptal Edildi</option>
+            </select>
+            </div>
+            </form>
+        </div>
     </div>
     <div class="col-md-6">
-
+        <div class="row">
+            <div class="col-12">
+                <h4>Sipariş İçeriği</h4>
+                <hr>
+                @foreach (var orderItem in Model.OrderItems!)
+                {
+                    <ul class="list-group mb-3">
+                            <li class="list-group-item ">
+                                <div class="row">
+                                    <div class="col-6 border-end">Ürün:</div>
+                                    <div class="col-6">@orderItem.Name</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-6 border-end">Fiyat:</div>
+                                    <div class="col-6">@orderItem.Price.ToString("c")</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-6 border-end">Ürün adeti:</div>
+                                    <div class="col-6">@orderItem.Quantity</div>
+                                </div>
+                            </li>
+                    </ul>
+                }
+            </div>
+        </div>
     </div>
     
 </div>
