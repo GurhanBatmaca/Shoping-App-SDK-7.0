@@ -42,10 +42,15 @@ namespace shopapp.data.Concrete.EfCore
                                     .ToListAsync();
         }
 
-        public Task UpdateStateAsync(int orderId)
+        public async Task UpdateStateAsync(int orderId, EnumOrderState orderState)
         {
-            throw new NotImplementedException();
-        }
+            var entity = await ShopContext!.Orders
+                                            .Where(i => i.Id == orderId)
+                                            .FirstOrDefaultAsync();
 
+            entity!.OrderState = orderState;
+
+            await ShopContext.SaveChangesAsync();
+        }
     }
 }

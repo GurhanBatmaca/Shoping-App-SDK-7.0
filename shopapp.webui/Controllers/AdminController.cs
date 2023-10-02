@@ -458,12 +458,23 @@ namespace shopapp.webui.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateOrder(OrderViewModel model)
         {
-            TempData.Put("message",new InfoMessage
+            var entity = await orderService.GetByIdAsync(model.OrderId);
+            if(entity == null)
+            {
+                TempData.Put("message",new InfoMessage
                 {
-                    Title = $"{model.OrderState}",
-                    Message=$"{model.OrderId}",
+                    Title = $"Sipariş bulunamadı.",
                     AlertType = "danger"
                 });
+            }
+            TempData.Put("message",new InfoMessage
+            {
+                Title = $"Sipariş durumu güncellendi.",
+                AlertType = "success"
+            });
+
+            await orderService.UpdateStateAsync(model.OrderId,model.OrderState);
+
             return RedirectToAction("OrderList");
         }
     }

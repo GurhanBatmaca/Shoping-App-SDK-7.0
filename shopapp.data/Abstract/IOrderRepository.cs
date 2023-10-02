@@ -7,6 +7,6 @@ namespace shopapp.data.Abstract
         Task<List<Order>> GetOrdersAsync(string userId);
         Task<List<Order>> GetAllOrdersAsync();
         Task<Order?> GetByIdWithItemsAsync(int orderId);
-        Task UpdateStateAsync(int orderId);
+        Task UpdateStateAsync(int orderId,EnumOrderState orderState);
     }
 }

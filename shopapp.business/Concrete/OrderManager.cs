@@ -25,6 +25,11 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Orders.GetAllOrdersAsync();
         }
 
+        public async Task<Order?> GetByIdAsync(int id)
+        {
+            return await unitOfWork.Orders.GetByIdAsync(id);
+        }
+
         public async Task<Order?> GetByIdWithItemsAsync(int orderId)
         {
             return await unitOfWork.Orders.GetByIdWithItemsAsync(orderId);
@@ -35,9 +40,9 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Orders.GetOrdersAsync(userId);
         }
 
-        public async Task UpdateStateAsync(int orderId)
+        public async Task UpdateStateAsync(int orderId, EnumOrderState orderState)
         {
-            await unitOfWork.Orders.UpdateStateAsync(orderId);
+            await unitOfWork.Orders.UpdateStateAsync(orderId,orderState);
         }
 
         public bool Validation(Order entity)
