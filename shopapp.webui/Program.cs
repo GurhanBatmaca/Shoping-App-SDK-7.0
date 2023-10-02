@@ -128,7 +128,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "oderlist",
     pattern: "/siparislerim",
-    defaults: new {controller="Order", action="OrderList"}
+    defaults: new {controller="Order", action="Orders"}
 );
 
 app.MapControllerRoute(

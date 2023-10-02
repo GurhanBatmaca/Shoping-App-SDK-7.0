@@ -16,146 +16,146 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gurha\OneDrive\Masaüstü\Shopapp-Dotnet-SDK-7.0\shopapp.webui
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/AccessDenied.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ConfirmEmail.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ForgotPassword.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/Login.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/Register.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ResetPassword.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CategoryList.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateCategory.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateProduct.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditCategory.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditProduct.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/OrderList.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/OrderList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/ProductList.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/ProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/UpdateOrder.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Admin/UpdateOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Cart/Index.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Home/Index.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Home/Privacy.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/Checkout.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/OrderList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJMaXN0LmNzaHRtbA==
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/SuccessPayment.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Order/SuccessPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU3VjY2Vzc1BheW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/Components/Categories/Default.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/Components/Categories/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcmllc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/Error.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_footer.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_infoMessage.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_infoMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9pbmZvTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_navbar.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_product.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_search.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_slider.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_slider.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zbGlkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Details.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/List.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Popular.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Popular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQb3B1bGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Search.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shop/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/_ViewImports.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/_ViewStart.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_Layout.cshtml]
+[C:/Users/Gurha/OneDrive/Masaüstü/Shopapp-Dotnet-SDK-7.0/shopapp.webui/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dhnq7yq9x2
