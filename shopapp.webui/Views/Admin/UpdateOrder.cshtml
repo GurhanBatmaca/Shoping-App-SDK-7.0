@@ -11,8 +11,18 @@
             <ul class="list-group mb-3">
                 <li class="list-group-item ">
                     <div class="row">
+                        <div class="col-6 border-end">Sipariş Id:</div>
+                        <div class="col-6">#@Model.OrderId</div>
+                    </div>
+                </li>
+                <li class="list-group-item ">
+                    <div class="row">
                         <div class="col-6 border-end">Sipariş Durumu:</div>
-                        <div class="col-6">@Model.OrderState</div>
+                        <div class="col-6">
+                            @(
+                                Model.OrderState.ToString() == "provision" ? "Hazırlanıyor" : Model.OrderState.ToString() == "delivery" ? "Kargoda": Model.OrderState.ToString() == "canceled" ? "İptal edildi": "Teslim Edildi"
+                            )
+                        </div>
                     </div>
                 </li>
                 <li class="list-group-item">
@@ -23,19 +33,25 @@
                 </li>
                 <li class="list-group-item ">
                     <div class="row">
-                        <div class="col-6 border-end">Sipariş Id:</div>
-                        <div class="col-6">@Model.OrderId</div>
+                        <div class="col-6 border-end">Alıcı:</div>
+                        <div class="col-6">@Model.FirstName @Model.LastName</div>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-6 border-end">Toplam:</div>
-                        <div class="col-6">@Model.TotalPrice().ToString("c")</div>
+                        <div class="col-6 border-end">Adres:</div>
+                        <div class="col-6">@Model.Address / @Model.City</div>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div class="row">
-                        <div class="col-6 border-end">Toplam:</div>
+                        <div class="col-6 border-end">İletişim:</div>
+                        <div class="col-6">0@(Model.Phone) / @Model.Email</div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6 border-end">Ödeme Türü:</div>
                         <div class="col-6">
                             @(
                                 Model.PaymentType.ToString() == "CrediCard" ? "Kredi Kartı" : Model.PaymentType.ToString() == "Eft" ? "EFT": "Nakit"
@@ -43,23 +59,27 @@
                         </div>
                     </div>
                 </li>
-
-                 
-
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-6 border-end">Toplam:</div>
+                        <div class="col-6">@Model.TotalPrice().ToString("c") TL</div>
+                    </div>
+                </li>
         </ul>
         </div>
         <div>
-            <form asp-controller="Admin" asp-action="UpdateOrder"  method="post">
-            <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Durum</label>
-            <select class="form-select" id="inputGroupSelect01">
-                <option selected disabled>@Model.OrderState</option>
-                <option value="0">Hazırlanıyor</option>
-                <option value="1">Kargoda</option>
-                <option value="2">Teslim Edildi</option>
-                <option value="3">İptal Edildi</option>
-            </select>
-            </div>
+            <form asp-controller="Admin" asp-action="UpdateOrder" method="post">
+                <input type="hidden" asp-for="@Model.OrderId">
+                <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Durum</label>
+                <select class="form-select" id="inputGroupSelect01" asp-for="@Model.OrderState">
+                    <option value="0">Hazırlanıyor</option>
+                    <option value="1">Kargoda</option>
+                    <option value="2">Teslim Edildi</option>
+                    <option value="3">İptal Edildi</option>
+                </select>
+                </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
             </form>
         </div>
     </div>
@@ -80,7 +100,7 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-6 border-end">Fiyat:</div>
-                                    <div class="col-6">@orderItem.Price.ToString("c")</div>
+                                    <div class="col-6">@orderItem.Price.ToString("c") TL</div>
                                 </div>
                             </li>
                             <li class="list-group-item">

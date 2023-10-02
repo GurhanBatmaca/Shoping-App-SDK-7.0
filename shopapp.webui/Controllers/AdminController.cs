@@ -458,7 +458,13 @@ namespace shopapp.webui.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateOrder(OrderViewModel model)
         {
-            return View();
+            TempData.Put("message",new InfoMessage
+                {
+                    Title = $"{model.OrderState}",
+                    Message=$"{model.OrderId}",
+                    AlertType = "danger"
+                });
+            return RedirectToAction("OrderList");
         }
     }
 }
