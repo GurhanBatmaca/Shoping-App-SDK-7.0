@@ -16,12 +16,20 @@ namespace shopapp.data.Concrete.EfCore
             get { return context as ShopContext; }
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync()
+        public async Task<List<Order>> GetAllOrdersAsync(EnumOrderState orderState,int page,int pageSize)
         {
-            return await ShopContext!.Orders
+            var orders = ShopContext!.Orders
                                     .Include(i => i.OrderItems!)
                                     .ThenInclude(i=>i.Product)
-                                    .ToListAsync();
+                                    .AsQueryable();
+
+            if(orderState == (EnumOrderState)1 || orderState == (EnumOrderState)2 || orderState == (EnumOrderState)3|| orderState == (EnumOrderState)4)
+            {
+                orders = orders
+                        .Where(i => i.OrderState == orderState+1);
+            };
+
+            return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<Order?> GetByIdWithItemsAsync(int orderId)

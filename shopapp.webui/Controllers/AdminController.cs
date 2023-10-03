@@ -374,9 +374,11 @@ namespace shopapp.webui.Controllers
             return RedirectToAction("CategoryList");
         }
     
-        public async Task<IActionResult> OrderList()
-        {
-            var orders = await orderService.GetAllOrdersAsync();
+        public async Task<IActionResult> OrderList(EnumOrderState orderState,int page=1)
+        { 
+            var pageSize =3;
+
+            var orders = await orderService.GetAllOrdersAsync(orderState,page,pageSize);
 
             var orderWiewModelList = new List<OrderViewModel>();
 
