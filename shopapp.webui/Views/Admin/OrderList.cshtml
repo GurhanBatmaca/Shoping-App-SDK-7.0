@@ -3,10 +3,18 @@
     <h1>Sipariş Listesi</h1>
     <hr>
 
+    <div class="btn-group mb-3" role="group" aria-label="">
+        <a href="/admin/siparislistesi/hepsi" class="btn btn-primary btn-sm">Hepsi</a>
+        <a href="/admin/siparislistesi/hazirlaniyor/0" class="btn btn-warning btn-sm">Hazirlıktakiler</a>
+        <a href="/admin/siparislistesi/kargoda/1" class="btn btn-info btn-sm">Kargodakiler</a>
+        <a href="/admin/siparislistesi/teslim-edildi/2" class="btn btn-success btn-sm">Teslim Edilenler</a>
+        <a href="/admin/siparislistesi/iptal-edildi/3" class="btn btn-danger btn-sm">İptal Edilenler</a>
+    </div>
+
     @foreach (var order in Model)
     {
        <table class="table table-bordered table-sm mb-3">
-            <thead class="bg-primary">
+            <thead class="@(order.OrderState.ToString() == "provision" ? "bg-warning" : order.OrderState.ToString() == "delivery" ? "bg-info" : order.OrderState.ToString() == "canceled" ? "bg-danger" : "bg-success")">
                 <tr>
                     <td colspan="2">Sipariş Id: #@order.OrderId</td>
                     <th>Fiyat</th>

@@ -16,17 +16,17 @@ namespace shopapp.data.Concrete.EfCore
             get { return context as ShopContext; }
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync(EnumOrderState orderState,int page,int pageSize)
+        public async Task<List<Order>> GetAllOrdersAsync(string kategori,EnumOrderState orderState,int page,int pageSize)
         {
             var orders = ShopContext!.Orders
                                     .Include(i => i.OrderItems!)
                                     .ThenInclude(i=>i.Product)
                                     .AsQueryable();
 
-            if(orderState == (EnumOrderState)1 || orderState == (EnumOrderState)2 || orderState == (EnumOrderState)3|| orderState == (EnumOrderState)4)
+            if(kategori != "hepsi")
             {
                 orders = orders
-                        .Where(i => i.OrderState == orderState+1);
+                        .Where(i => i.OrderState == orderState);
             };
 
             return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();

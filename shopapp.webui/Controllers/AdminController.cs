@@ -374,11 +374,11 @@ namespace shopapp.webui.Controllers
             return RedirectToAction("CategoryList");
         }
     
-        public async Task<IActionResult> OrderList(EnumOrderState orderState,int page=1)
+        public async Task<IActionResult> OrderList(string kategori,EnumOrderState orderState,int page=1)
         { 
             var pageSize =3;
 
-            var orders = await orderService.GetAllOrdersAsync(orderState,page,pageSize);
+            var orders = await orderService.GetAllOrdersAsync(kategori,orderState,page,pageSize);
 
             var orderWiewModelList = new List<OrderViewModel>();
 
@@ -477,7 +477,7 @@ namespace shopapp.webui.Controllers
 
             await orderService.UpdateStateAsync(model.OrderId,model.OrderState);
 
-            return RedirectToAction("OrderList");
+            return Redirect("~/admin/siparislistesi/hepsi");
         }
     }
 }

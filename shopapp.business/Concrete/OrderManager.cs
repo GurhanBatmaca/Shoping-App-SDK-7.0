@@ -20,9 +20,9 @@ namespace shopapp.business.Concrete
             await unitOfWork.Orders.CreateAsync(entity);
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync(EnumOrderState orderState,int page,int pageSize)
+        public async Task<List<Order>> GetAllOrdersAsync(string kategori,EnumOrderState orderState,int page,int pageSize)
         {
-            return await unitOfWork.Orders.GetAllOrdersAsync(orderState,page,pageSize);
+            return await unitOfWork.Orders.GetAllOrdersAsync(kategori,orderState,page,pageSize);
         }
 
         public async Task<Order?> GetByIdAsync(int id)
