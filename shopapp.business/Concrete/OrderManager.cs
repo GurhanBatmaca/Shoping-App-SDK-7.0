@@ -40,9 +40,14 @@ namespace shopapp.business.Concrete
             return await unitOfWork.Orders.GetByIdWithItemsAsync(orderId);
         }
 
-        public async Task<List<Order>> GetOrdersAsync(string userId)
+        public async Task<List<Order>> GetOrdersAsync(string userId,int page,int pageSize)
         {
-            return await unitOfWork.Orders.GetOrdersAsync(userId);
+            return await unitOfWork.Orders.GetOrdersAsync(userId,page,pageSize);
+        }
+
+        public async Task<int> GetOrdersCountAsync(string userId)
+        {
+            return await unitOfWork.Orders.GetOrdersCountAsync(userId);
         }
 
         public async Task UpdateStateAsync(int orderId, EnumOrderState orderState)

@@ -1,68 +1,85 @@
-@model List<OrderViewModel>
+@model OrderListWiewModel
 
-    <h1>Siparişlerim</h1>
-    <hr>
+<h1>Siparişlerim</h1>
+<hr>
 
-    @foreach (var order in Model)
-    {
-       <table class="table table-bordered table-sm mb-3">
-            <thead class="bg-primary">
+@foreach (var order in Model.OrderViewModels!)
+{
+    <table class="table table-bordered table-sm mb-3">
+        <thead class="bg-primary">
+            <tr>
+                <td colspan="2">Sipariş Id: #@order.OrderNumber</td>
+                <th>Fiyat</th>
+                <th>Adet</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var orderItem in order.OrderItems!)
+            {
                 <tr>
-                    <td colspan="2">Sipariş Id: #@order.OrderNumber</td>
-                    <th>Fiyat</th>
-                    <th>Adet</th>
+                    <td><img src="~/img/@orderItem.ImageUrl" alt="" width="50"></td>
+                    <td>@orderItem.Name</td>
+                    <td>@orderItem.Price.ToString("c")</td>
+                    <td>@orderItem.Quantity</td>
+                    
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var orderItem in order.OrderItems!)
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Müşteri Adı:</td>
+                <td>@order.FirstName @order.LastName</td>
+                <td rowspan="7">Toplam: @order.TotalPrice().ToString("c")</td>
+            </tr>
+            <tr>
+                <td colspan="2">Adres: </td>
+                <td>@order.Address</td>
+            </tr>
+            <tr>
+                <td colspan="2">Email: </td>
+                <td>@order.Email</td>
+            </tr>
+            <tr>
+                <td colspan="2">Telefon: </td>
+                <td>0@(order.Phone)</td>
+            </tr>
+            <tr>
+                <td colspan="2">Sipariş Durumu: </td>
+                <td>
+                @(
+                    order.OrderState.ToString() == "provision" ? "Hazırlanıyor" : order.OrderState.ToString() == "delivery" ? "Kargoda": order.OrderState.ToString() == "canceled" ? "İptal edildi": "Teslim Edildi"
+                )
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Ödeme Tipi: </td>
+                <td>
+                @(
+                    order.PaymentType.ToString() == "CrediCard" ? "Kredi Kartı" : order.PaymentType.ToString() == "Eft" ? "EFT": "Nakit"
+                )
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Sipariş Tarihi: </td>
+                <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
+            </tr>
+        </tfoot>
+    </table> 
+}
+
+<div class="row">
+    <div class="col">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @for (int i = 0; i < Model.PageInfo!.TotalPages(); i++)
                 {
-                    <tr>
-                        <td><img src="~/img/@orderItem.ImageUrl" alt="" width="50"></td>
-                        <td>@orderItem.Name</td>
-                        <td>@orderItem.Price.ToString("c")</td>
-                        <td>@orderItem.Quantity</td>
-                        
-                    </tr>
+                    <li class="page-item @(Model.PageInfo.CurrentPage == i+1 ? "active" : "")">
+                        <a class="page-link" href="/siparislerim?sayfa=@(i+1)">
+                            @(i+1)
+                        </a>
+                    </li>
                 }
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Müşteri Adı:</td>
-                    <td>@order.FirstName @order.LastName</td>
-                    <td rowspan="7">Toplam: @order.TotalPrice().ToString("c")</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Adres: </td>
-                    <td>@order.Address</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Email: </td>
-                    <td>@order.Email</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Telefon: </td>
-                    <td>0@(order.Phone)</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Sipariş Durumu: </td>
-                    <td>
-                    @(
-                        order.OrderState.ToString() == "provision" ? "Hazırlanıyor" : order.OrderState.ToString() == "delivery" ? "Kargoda": order.OrderState.ToString() == "canceled" ? "İptal edildi": "Teslim Edildi"
-                    )
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">Ödeme Tipi: </td>
-                    <td>
-                    @(
-                        order.PaymentType.ToString() == "CrediCard" ? "Kredi Kartı" : order.PaymentType.ToString() == "Eft" ? "EFT": "Nakit"
-                    )
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">Sipariş Tarihi: </td>
-                    <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
-                </tr>
-            </tfoot>
-       </table> 
-    }
+            </ul>
+        </nav>
+    </div>
+</div>

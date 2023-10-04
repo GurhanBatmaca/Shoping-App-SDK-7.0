@@ -92,7 +92,7 @@ namespace shopapp.webui.Controllers
                 await orderService!.CreateAsync(entity);
                 await cartService.ClearCartAsync(cart.Id);         
 
-                return RedirectToAction("SuccessPayment");
+                return RedirectToAction("Orders");
             }
 
             else 
@@ -112,19 +112,18 @@ namespace shopapp.webui.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Orders()
+        public async Task<IActionResult> Orders(int sayfa=1)
         {
+            const int pageSize = 2;
             var userId = userManager!.GetUserId(User);
-
-            var orders = await orderService!.GetOrdersAsync(userId!);
+            var orders = await orderService!.GetOrdersAsync(userId!,sayfa,pageSize);
+            var ordersCount = await orderService.GetOrdersCountAsync(userId!);
             
-            var orderWiewModelList = new List<OrderViewModel>();
-
+            var orderList = new List<OrderViewModel>();
             var orderModel = new OrderViewModel();
 
             foreach (var order in orders)
             {
-
                 orderModel = new OrderViewModel();
 
                 orderModel.OrderId = order.Id;
@@ -147,10 +146,21 @@ namespace shopapp.webui.Controllers
                     ImageUrl = i.Product.ImageUrl
                 }).ToList();
 
-                orderWiewModelList.Add(orderModel);
+                orderList.Add(orderModel);
             }
 
-            return View(orderWiewModelList);
+            var orderListWiewModel = new OrderListWiewModel
+            {
+                OrderViewModels = orderList,
+                PageInfo = new PageInfo
+                {
+                    CurrentPage = sayfa,
+                    ItemPerPage = pageSize,
+                    TotalItems = ordersCount,
+                }
+            };
+
+            return View(orderListWiewModel);
         }
 
     }

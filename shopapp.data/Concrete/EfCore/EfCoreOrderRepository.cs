@@ -58,14 +58,26 @@ namespace shopapp.data.Concrete.EfCore
                                             .FirstOrDefaultAsync();
         }
 
-        public async Task<List<Order>> GetOrdersAsync(string userId)
+        public async Task<List<Order>> GetOrdersAsync(string userId,int page,int pageSize)
+        {
+            var orders = ShopContext!.Orders
+                                    .Include(i => i.OrderItems!)
+                                    .ThenInclude(i=>i.Product)
+                                    .Where(i => i.UserId == userId)
+                                    .AsQueryable();
+
+            return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+        }
+
+        public async Task<int> GetOrdersCountAsync(string userId)
         {
             return await ShopContext!.Orders
                                     .Include(i => i.OrderItems!)
                                     .ThenInclude(i=>i.Product)
                                     .Where(i => i.UserId == userId)
-                                    .ToListAsync();
+                                    .CountAsync();
         }
+
 
         public async Task UpdateStateAsync(int orderId, EnumOrderState orderState)
         {
