@@ -1,26 +1,24 @@
 @model Product
 
 <div class="col">
-<div class="card h-100">
-    <div class="img-container">
-        <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="@Model.Name-image">
+    <div class="card h-100">
+        <div class="img-container">
+            <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="@Model.Name-image">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description.</p>
+            <p class="card-text">@Model.Price <i class="fa-solid fa-turkish-lira-sign"></i></p>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+            <a href="/urun/@Model.Url" class="btn btn-sm btn-primary ">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Detay
+            </a>
+            <a  class="btn btn-sm btn-primary ">
+                <i class="fa-solid fa-cart-plus"></i> Sepete Ekle
+            </a>
+        </div>
     </div>
-    <div class="card-body">
-    <h5 class="card-title">@Model.Name</h5>
-    <p class="card-text">@Model.Description.</p>
-    <p class="card-text">@Model.Price <i class="fa-solid fa-turkish-lira-sign"></i></p>
-    </div>
-    <div class="card-footer d-flex justify-content-around">
-
-        <a href="/urun/@Model.Url" class="btn btn-sm btn-primary ">
-            <i class="fa-solid fa-magnifying-glass-plus"></i> Detay
-        </a>
-
-        <a  class="btn btn-sm btn-primary ">
-            <i class="fa-solid fa-cart-plus"></i> Sepete Ekle
-        </a>
-    </div>
-</div>
 </div>
 
 
