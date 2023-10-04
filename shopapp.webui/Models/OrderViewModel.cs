@@ -3,9 +3,14 @@ using shopapp.entity;
 
 namespace shopapp.webui.Models
 {
+    public class OrderListWiewModel
+    {
+        public List<OrderViewModel>? OrderViewModels { get; set; }
+        public PageInfo? PageInfo { get; set; }
+
+    }
     public class OrderViewModel 
     {
-        
         public int OrderId { get; set; }
         public string? OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
@@ -30,6 +35,7 @@ namespace shopapp.webui.Models
         {
             return OrderItems!.Sum(i=>i.Price * i.Quantity);
         }
+
     }
 
 

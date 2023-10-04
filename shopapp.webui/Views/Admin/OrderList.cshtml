@@ -1,4 +1,4 @@
-@model List<OrderViewModel>
+@model OrderListWiewModel
 
     <h1>Sipariş Listesi</h1>
     <hr>
@@ -11,7 +11,7 @@
         <a href="/admin/siparislistesi/iptal-edildi/3" class="btn btn-danger btn-sm">İptal Edilenler</a>
     </div>
 
-    @foreach (var order in Model)
+    @foreach (var order in Model.OrderViewModels)
     {
        <table class="table table-bordered table-sm mb-3">
             <thead class="@(order.OrderState.ToString() == "provision" ? "bg-warning" : order.OrderState.ToString() == "delivery" ? "bg-info" : order.OrderState.ToString() == "canceled" ? "bg-danger" : "bg-success")">

@@ -380,7 +380,7 @@ namespace shopapp.webui.Controllers
 
             var orders = await orderService.GetAllOrdersAsync(kategori,orderState,page,pageSize);
 
-            var orderWiewModelList = new List<OrderViewModel>();
+            var orderList = new List<OrderViewModel>();
 
             var orderModel = new OrderViewModel();
 
@@ -409,10 +409,16 @@ namespace shopapp.webui.Controllers
                     ImageUrl = i.Product.ImageUrl
                 }).ToList();
 
-                orderWiewModelList.Add(orderModel);
+                orderList.Add(orderModel);
             }
 
-            return View(orderWiewModelList);
+            
+            var orderListWiewModel = new OrderListWiewModel
+            {
+                OrderViewModels = orderList
+            };
+            
+            return View(orderListWiewModel);
         }
     
         [HttpGet]
