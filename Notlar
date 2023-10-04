@@ -1,7 +1,4 @@
-admin ürün ekle ve düzenle için js validatör ve html editör eklenecek
+ckeditor html eklemeleri yapılacak
 admin ürün listesine ıspopular eklenecek
 sayfaları dışta tek div ile kaspa row
 buttonlara hover olunca açıklama eklenecek
-register sayfasına şire özellikleri açıklaması eklenecek
-account sayfasında username ve emaail kayıylımı kontrol edilecek
-** önemli admin ve order view de orderlist var birinin adını değiştir
