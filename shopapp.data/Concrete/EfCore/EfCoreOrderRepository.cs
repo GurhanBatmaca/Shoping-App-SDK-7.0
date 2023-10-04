@@ -16,14 +16,14 @@ namespace shopapp.data.Concrete.EfCore
             get { return context as ShopContext; }
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync(string kategori,EnumOrderState orderState,int page,int pageSize)
+        public async Task<List<Order>> GetAllOrdersAsync(string category,EnumOrderState orderState,int page,int pageSize)
         {
             var orders = ShopContext!.Orders
                                     .Include(i => i.OrderItems!)
                                     .ThenInclude(i=>i.Product)
                                     .AsQueryable();
 
-            if(kategori != "hepsi")
+            if(category != "hepsi")
             {
                 orders = orders
                         .Where(i => i.OrderState == orderState);
@@ -31,6 +31,23 @@ namespace shopapp.data.Concrete.EfCore
 
             return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
         }
+
+        public async Task<int> GetAllOrdersCountAsync(string category,EnumOrderState orderState)
+        {
+            var orders = ShopContext!.Orders
+                                    .Include(i => i.OrderItems!)
+                                    .ThenInclude(i=>i.Product)
+                                    .AsQueryable();
+
+            if(category != "hepsi")
+            {
+                orders = orders
+                        .Where(i => i.OrderState == orderState);
+            };
+
+            return await orders.CountAsync();
+        }
+
 
         public async Task<Order?> GetByIdWithItemsAsync(int orderId)
         {

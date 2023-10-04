@@ -15,6 +15,7 @@ public class PageInfo
     public int CurrentPage { get; set; }
     public string? CurrentCategory { get; set; }
     public string? SearchString { get; set; }
+    public EnumOrderState? OrderState { get; set; }
 
     public int TotalPages()
     {

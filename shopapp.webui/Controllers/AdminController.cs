@@ -374,11 +374,12 @@ namespace shopapp.webui.Controllers
             return RedirectToAction("CategoryList");
         }
     
-        public async Task<IActionResult> OrderList(string kategori,EnumOrderState orderState,int page=1)
+        public async Task<IActionResult> OrderList(string category,EnumOrderState orderState,int sayfa=1)
         { 
-            var pageSize =3;
+            const int pageSize =3;
 
-            var orders = await orderService.GetAllOrdersAsync(kategori,orderState,page,pageSize);
+            var orders = await orderService.GetAllOrdersAsync(category,orderState,sayfa,pageSize);
+            var ordersCount = await orderService.GetAllOrdersCountAsync(category,orderState);
 
             var orderList = new List<OrderViewModel>();
 
@@ -415,7 +416,15 @@ namespace shopapp.webui.Controllers
             
             var orderListWiewModel = new OrderListWiewModel
             {
-                OrderViewModels = orderList
+                OrderViewModels = orderList,
+                PageInfo = new PageInfo
+                {
+                    CurrentCategory = category,
+                    CurrentPage = sayfa,
+                    ItemPerPage = pageSize,
+                    TotalItems = ordersCount,
+                    OrderState = orderState
+                }
             };
             
             return View(orderListWiewModel);
