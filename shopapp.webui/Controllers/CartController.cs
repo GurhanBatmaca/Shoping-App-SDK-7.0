@@ -6,6 +6,7 @@ using shopapp.webui.Models;
 
 namespace shopapp.webui.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class CartController: Controller
     {
         private readonly ICartService? cartService;

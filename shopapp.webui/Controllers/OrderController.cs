@@ -9,6 +9,7 @@ using shopapp.webui.Models;
 
 namespace shopapp.webui.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class OrderController: Controller
     {
         private readonly ICartService? cartService;
@@ -106,12 +107,6 @@ namespace shopapp.webui.Controllers
             }
             
         }
-
-        public IActionResult SuccessPayment()
-        {
-            return View();
-        }
-
         public async Task<IActionResult> Orders(int sayfa=1)
         {
             const int pageSize = 2;
