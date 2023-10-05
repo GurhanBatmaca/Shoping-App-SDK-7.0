@@ -1,21 +1,14 @@
-@model ProductListModel
+@{
+    ViewData["Title"] = "Popüler ürünler";
+}
 
 @section Css 
 {
     <link rel="stylesheet" href="~/css/card.css">
 }
 
-@{
-    ViewData["Title"] = "Ürünler";
-}
+@model ProductListModel
 
-@section Header 
-{
-    <div class="text-center bg-light">
-        @* <h1>Shop App</h1>
-        <h3>Bütün Ürünler</h3> *@
-    </div>
-}
 
 <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4">
     @foreach(var item in @Model.Products!)
