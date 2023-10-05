@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj",
+      "projectUniqueName": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj",
       "projectName": "shopapp.entity",
-      "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj",
+      "projectPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj",
       "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.entity\\obj\\",
+      "outputPath": "c:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",

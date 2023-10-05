@@ -3219,11 +3219,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+      "projectUniqueName": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
       "projectName": "shopapp.business",
-      "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
+      "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.business\\shopapp.business.csproj",
       "packagesPath": "C:\\Users\\Gurha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.business\\obj\\",
+      "outputPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gurha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3240,11 +3240,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.data\\shopapp.data.csproj": {
-              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.data\\shopapp.data.csproj"
+            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.data\\shopapp.data.csproj": {
+              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.data\\shopapp.data.csproj"
             },
-            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj": {
-              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shopapp-Dotnet-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj"
+            "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj": {
+              "projectPath": "C:\\Users\\Gurha\\OneDrive\\Masaüstü\\Shoping-App-SDK-7.0\\shopapp.entity\\shopapp.entity.csproj"
             }
           }
         }
