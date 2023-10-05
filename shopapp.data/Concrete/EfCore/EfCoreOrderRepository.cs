@@ -29,7 +29,7 @@ namespace shopapp.data.Concrete.EfCore
                         .Where(i => i.OrderState == orderState);
             };
 
-            return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+            return await orders.OrderByDescending(i=>i.OrderDate).Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<int> GetAllOrdersCountAsync(string category,EnumOrderState orderState)
@@ -66,7 +66,7 @@ namespace shopapp.data.Concrete.EfCore
                                     .Where(i => i.UserId == userId)
                                     .AsQueryable();
 
-            return await orders.Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
+            return await orders.OrderByDescending(i=>i.OrderDate).Skip((page-1)*pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<int> GetOrdersCountAsync(string userId)

@@ -14,9 +14,16 @@
             <a href="/urun/@Model.Url" class="btn btn-sm btn-primary ">
                 <i class="fa-solid fa-magnifying-glass-plus"></i> Detay
             </a>
-            <a  class="btn btn-sm btn-primary ">
-                <i class="fa-solid fa-cart-plus"></i> Sepete Ekle
-            </a>
+
+            <form asp-controller="Cart" asp-action="AddToCart" class="form-inline">
+                    <input type="hidden" name="Id" value="@Model.Id">
+                    <input type="hidden" name="quantity" value="1" >
+
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        <i class="fas fa-cart-plus"></i>Sepete Ekle
+
+                    </button>                 
+                </form>
         </div>
     </div>
 </div>

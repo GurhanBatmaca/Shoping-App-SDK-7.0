@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using shopapp.business.Abstract;
@@ -10,6 +11,7 @@ using shopapp.webui.Models;
 namespace shopapp.webui.Controllers
 {
     [AutoValidateAntiforgeryToken]
+    [Authorize]
     public class OrderController: Controller
     {
         private readonly ICartService? cartService;

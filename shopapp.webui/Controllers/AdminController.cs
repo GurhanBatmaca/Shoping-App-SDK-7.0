@@ -90,7 +90,7 @@ namespace shopapp.webui.Controllers
             
             if(model!.Photo == null)
             {
-                var randomName = "noProductImage.png";
+                var randomName = "noProductImage.jpg";
                 entity.ImageUrl = randomName;
 
                 TempData.Put("message",new InfoMessage
